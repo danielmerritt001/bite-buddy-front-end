@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
 import BoardList from './pages/BoardList/BoardList'
+import BoardDetails from './pages/BoardDetails/BoardDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -76,6 +77,12 @@ function App() {
         path='/boards'
         element={
           <BoardList/>
+        }
+        />
+        <Route 
+        path='/boards/:boardId'
+        element={
+          <BoardDetails/>
         }
         />
       </Routes>
