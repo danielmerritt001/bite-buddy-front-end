@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import RecipeList from './pages/RecipeList/RecipeList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -61,6 +62,13 @@ function App() {
               <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
           }
+        />
+        <Route
+        path='/recipes'
+        element={
+          // <ProtectedRoute user={user}>
+            <RecipeList/>
+        }
         />
       </Routes>
     </>
