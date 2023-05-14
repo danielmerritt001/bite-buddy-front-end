@@ -7,6 +7,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
 import BoardList from './pages/BoardList/BoardList'
@@ -49,7 +50,10 @@ function App() {
             </ProtectedRoute>
           }
         />
-
+        <Route 
+          path='/profiles/:profileId'
+          element={<ProfileDetails/>}
+        />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}

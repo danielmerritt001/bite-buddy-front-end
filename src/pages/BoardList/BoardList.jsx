@@ -1,5 +1,7 @@
-//css
+//component
 import BoardCard from '../../components/BoardCard/BoardCard'
+
+//css
 import styles from './BoardList.module.css'
 
 const BoardList = (props) => {
