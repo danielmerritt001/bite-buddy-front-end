@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -21,6 +21,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as recipeService from './services/recipeService'
 
 // styles
 import './App.css'
@@ -28,6 +29,35 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [recipes, setRecipes] = useState([])
+  const [search, setSearch] = useState('')
+  const [query, setQuery] = useState('')
+
+  //once we call this function we can undo comments but must connect with backend first to receive function that connects with API
+  // const getRecipes = async () => {
+  //   const response = await getRecipesData()
+  //   const data = await response.json()
+  //   setRecipes(data.hits)
+  //   console.log(data.hits)
+  // }
+
+  useEffect(() =>{
+    const fetchAllRecipes = async () => {
+      const data = await recipeService.index()
+      setRecipes(data)
+    }
+    if (user) fetchAllRecipes()
+  }, [user])
+
+  const updateSearch = e => {
+    setSearch(e.target.value)
+    console.log(query)
+  }
+
+  const getSearch = e => {
+    e.preventDefault()
+    setQuery(search)
+  }
 
   const handleLogout = () => {
     authService.logout()
@@ -42,6 +72,23 @@ function App() {
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
+        <div className="bite-buddy-title">
+          <h1><b>Bite Buddy</b></h1>
+        </div>
+      <form onSubmit={getSearch} className="search-form">
+        <input className="search-bar"
+          type="text"
+          value={search}
+          onChange={updateSearch}
+          placeholder="Type your favorite ingredients..."/>
+        <button className="search-button" type="submit">
+          Search
+        </button>
+      </form>
+      <div className="recipes">
+        {/* we will map through the recipes within recipelist */}
+        <RecipeList recipes={recipes}/>
+      </div>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
