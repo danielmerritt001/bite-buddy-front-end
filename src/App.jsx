@@ -11,6 +11,7 @@ import ProfileList from './pages/ProfileList/ProfileList'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
+import RecipeDetails from './pages/RecipeDetails/RecipeDetails'
 import BoardList from './pages/BoardList/BoardList'
 import BoardDetails from './pages/BoardDetails/BoardDetails'
 
@@ -77,23 +78,29 @@ function App() {
           }
         />
         <Route
-        path='/recipes'
-        element={
+          path='/recipes'
+          element={
           // <ProtectedRoute user={user}>
             <RecipeList/>
-        }
-        />
-        <Route
-        path='/boards'
-        element={
-          <BoardList/>
-        }
+          }
         />
         <Route 
-        path='/boards/:boardId'
-        element={
-          <BoardDetails/>
-        }
+          path='/recipes/:recipeId'
+          element={
+            <RecipeDetails/>
+          }
+        />
+        <Route
+          path='/boards'
+          element={
+            <BoardList/>
+          }
+        />
+        <Route 
+          path='/boards/:boardId'
+          element={
+            <BoardDetails/>
+          }
         />
       </Routes>
     </>

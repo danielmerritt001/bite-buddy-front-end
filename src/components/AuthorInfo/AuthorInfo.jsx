@@ -1,3 +1,6 @@
+//component
+import DateCard from '../DateCard/DateCard'
+
 //css
 import styles from './AuthorInfo.module.css'
 
@@ -11,6 +14,8 @@ const AuthorInfo = (props) => {
       {/* <img src={photo} alt="The user's avatar" /> */}
       <section>
         <h4>Authors Name Here</h4>
+        {/* add createdAt={content.createdAt to Date Card */}
+        <DateCard />
       </section>
     </div>
   )
