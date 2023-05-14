@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
+import BoardList from './pages/BoardList/BoardList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -47,6 +48,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
@@ -68,6 +70,12 @@ function App() {
         element={
           // <ProtectedRoute user={user}>
             <RecipeList/>
+        }
+        />
+        <Route
+        path='/boards'
+        element={
+          <BoardList/>
         }
         />
       </Routes>
