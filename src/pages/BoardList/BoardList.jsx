@@ -8,7 +8,7 @@ const BoardList = (props) => {
   return (
     <main className={`${styles.container} ${styles.main}`}>
       <h1>Hello, I'm the board list</h1>
-      <BoardCard />
+      {/* <BoardCard /> */}
     </main>
   )
 }
