@@ -4,12 +4,23 @@ import RecipeCard from '../../components/RecipeCard/RecipeCard'
 //css
 import styles from './RecipeList.module.css'
 
-const RecipeList = (props) => {
-  return(
-    <main className={`${styles.container} ${styles.main}`}>
-      <h1>Hello, I'm the recipe list</h1>
-      <RecipeCard />
+const RecipeList = ( props ) => {
+  const recipes = props.recipes.hits
+  console.log(props.recipes.hits)
+  if (recipes) {
+    return(
+      <main className={`${styles.container} ${styles.main}`}>
+      {recipes.map(recipeSingle => (
+        <RecipeCard key={recipeSingle._id} recipeSingle={recipeSingle} />
+      ))}
     </main>
-  )
+    )
+  } else {
+    <h1>IM STILL GETTING READY!!!</h1>
+  }
 }
 export default RecipeList
+
+// map recipes
+// map goes to card and passes recipe 
+// deconstruct recipe to be recipe 
