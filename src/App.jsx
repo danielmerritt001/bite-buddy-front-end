@@ -7,7 +7,6 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
-import ProfileList from './pages/ProfileList/ProfileList'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import RecipeList from './pages/RecipeList/RecipeList'
@@ -85,10 +84,6 @@ function App() {
           Search
         </button>
       </form>
-      <div className="recipes">
-        {/* we will map through the recipes within recipelist */}
-        <RecipeList recipes={recipes}/>
-      </div>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -98,11 +93,6 @@ function App() {
               <Profiles />
             </ProtectedRoute>
           }
-        />
-        <Route 
-        // change profile list to profile once backend is in communication with front end
-          path='/profilelist'
-          element={<ProfileList/>}
         />
         <Route 
           path='/profiles/:profileId'

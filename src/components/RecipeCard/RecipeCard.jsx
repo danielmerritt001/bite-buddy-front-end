@@ -13,12 +13,11 @@ const RecipeCard = (props) => {
       <div>
         {recipe.label}
       </div>
+      <div>
+        {recipe.source}
+      </div>
     </article>
     )
 }
 
 export default RecipeCard
-
-// map recipes
-// map goes to card and passes recipe 
-// deconstruct recipe to be recipe 
