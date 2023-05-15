@@ -11,7 +11,7 @@ const RecipeList = ( props ) => {
     return(
       <main className={`${styles.container} ${styles.main}`}>
       {recipes.map(recipeSingle => (
-        <RecipeCard key={recipeSingle._id} recipeSingle={recipeSingle} />
+        <RecipeCard key={recipeSingle._id} recipe={recipeSingle.recipe} />
       ))}
     </main>
     )

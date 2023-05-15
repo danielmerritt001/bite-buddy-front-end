@@ -1,24 +1,33 @@
+
+
 //css
 import RecipeCard from '../RecipeCard/RecipeCard'
 import styles from './BoardCard.module.css'
 
 const BoardCard = (props) => {
-  return (
-    <>
-    {props.profile.boards.map((board, index) => {
-      if (Array.isArray(board)){
-      // const board = props.profile.boards
-    console.log(props.profile.boards, 'these are the boards')
-      return (  
-        <article className={styles.container} key ={board}>
-          <h1>This is the board card</h1>
-            <RecipeCard key={board}/>
-        </article>
-        )
-      }
-    })}
-    </>
-  )
+  console.log(props.profile.boards, 'boards')
+  const boards = props.profile.boards
+  if(boards.length>0){
+    return (
+      <>
+        {props.profile.boards.map((board) => (
+            <article className={styles.container} key={board._id}>
+              <h1>This is the board card</h1>
+              {/* were mapping the recipe and when the recipe exists we will use the service function to show foodId */}
+                {board.recipes.map(recipe => {
+                  console.log(recipe.foodId, 'recipe food id')
+                  // const recipeObj = props.handleGetRecipe(recipe.foodId)
+                  // console.log(recipeObj, 'recipeobj')
+                  //RecipeCard/>
+                  })
+                }
+              {/* } */}
+              {/* } */}
+            </article>
+        ))}
+      </>
+    )
+  }
 }
 
 export default BoardCard

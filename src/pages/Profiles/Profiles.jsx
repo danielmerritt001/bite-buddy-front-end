@@ -10,9 +10,8 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard'
 // css
 import styles from './Profiles.module.css'
 
-const Profiles = () => {
+const Profiles = (props) => {
   const [profiles, setProfiles] = useState([])
-
   useEffect(() => {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
@@ -32,7 +31,7 @@ const Profiles = () => {
         <>
           <p key={profile._id}>
           {profile.name}</p>
-          <ProfileCard profile={profile}/>
+          <ProfileCard profile={profile} handleGetRecipe={props.handleGetRecipe}/>
         </>
       ))}
     </main>

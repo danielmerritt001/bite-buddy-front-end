@@ -32,14 +32,6 @@ function App() {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
 
-  //once we call this function we can undo comments but must connect with backend first to receive function that connects with API
-  // const getRecipes = async () => {
-  //   const response = await getRecipesData()
-  //   const data = await response.json()
-  //   setRecipes(data.hits)
-  //   console.log(data.hits)
-  // }
-
   useEffect(() =>{
     const fetchAllRecipes = async () => {
       const data = await recipeService.index()
@@ -59,13 +51,18 @@ function App() {
   }
 
   const handleLogout = () => {
-    authService.logout()
     setUser(null)
+    authService.logout()
     navigate('/')
   }
 
   const handleAuthEvt = () => {
     setUser(authService.getUser())
+  }
+  
+  const handleGetRecipe = async (recipeId) => {
+    const recipeObj = await recipeService.show(recipeId)
+    return recipeObj
   }
 
   return (
@@ -85,26 +82,37 @@ function App() {
         </button>
       </form>
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route 
+          path="/" 
+          element={
+            <Landing user={user} />
+          } 
+        />
         <Route
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles handleGetRecipe={handleGetRecipe}/>
             </ProtectedRoute>
           }
         />
         <Route 
           path='/profiles/:profileId'
-          element={<ProfileDetails/>}
+          element={
+            <ProfileDetails/>
+          }
         />
         <Route
           path="/auth/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} />}
+          element={
+            <Signup handleAuthEvt={handleAuthEvt} />
+          }
         />
         <Route
           path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} />}
+          element={
+            <Login handleAuthEvt={handleAuthEvt} />
+          }
         />
         <Route
           path="/auth/change-password"
@@ -130,13 +138,13 @@ function App() {
         <Route
           path='/boards'
           element={
-            <BoardList/>
+            <BoardList handleGetRecipe={handleGetRecipe}/>
           }
         />
         <Route 
           path='/boards/:boardId'
           element={
-            <BoardDetails/>
+            <BoardDetails handleGetRecipe={handleGetRecipe}/>
           }
         />
       </Routes>

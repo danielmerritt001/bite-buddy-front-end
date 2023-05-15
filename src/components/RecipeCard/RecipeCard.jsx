@@ -2,7 +2,7 @@
 import styles from './RecipeCard.module.css'
 
 const RecipeCard = (props) => {
-  const recipe = props.recipeSingle.recipe
+  const recipe = props.recipe
   console.log(recipe)
   console.log(recipe.images.SMALL.url)
   return (
@@ -21,3 +21,6 @@ const RecipeCard = (props) => {
 }
 
 export default RecipeCard
+
+//use get recipe function to do what we want to
+//pass recipe id through each level
