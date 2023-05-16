@@ -10,12 +10,14 @@ const BoardCard = (props) => {
   // const boards = props.profile.boards
   // if(boards.length>0){
     return (
-      <div>
-        {props.board.title}
-        {props.board.author.name}
-        {props.board.bgColor}
-        <img src={props.board.thumbnail} alt="" />
-      </div>
+      <Link to={`/boards/${props.board._id}`}>
+        <div>
+          {props.board.title}
+          {props.board.author.name}
+          {props.board.bgColor}
+          <img src={props.board.thumbnail} alt="" />
+        </div>
+      </Link>
     )
     // return (
     //   <>
