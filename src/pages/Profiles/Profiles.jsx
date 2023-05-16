@@ -26,15 +26,27 @@ const Profiles = (props) => {
   
   return (
     <main className={styles.container}>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.map(profile => (
+      <h1>This is the Profile List</h1>
+      {profiles.map(profile => 
         <>
-          <p key={profile._id}>
-          {profile.name}</p>
-          <ProfileCard profile={profile} handleGetRecipe={props.handleGetRecipe}/>
+          <h3>I'm {profile.name}</h3>
+          <ProfileCard profile={profile} />
         </>
-      ))}
+        )
+      }
     </main>
+
+
+    // <main className={styles.container}>
+    //   <h1>Hello. This is a list of all the profiles.</h1>
+    //   {profiles.map(profile => (
+    //     <>
+    //       <p key={profile._id}>
+    //       {profile.name}</p>
+    //       <ProfileCard profile={profile} handleGetRecipe={props.handleGetRecipe}/>
+    //     </>
+    //   ))}
+    // </main>
   )
 }
 
