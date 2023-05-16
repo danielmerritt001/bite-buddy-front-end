@@ -1,22 +1,27 @@
+// npm modules
+import { Link } from 'react-router-dom'
+
 //css
 import styles from './RecipeCard.module.css'
 
 const RecipeCard = (props) => {
   const recipe = props.recipe
-  console.log(recipe)
-  console.log(recipe.images.SMALL.url)
+  const foodId = recipe.uri.split('recipe_')[1]
+  console.log(foodId)
   return (
-    <article className={styles.container}>
-      <div>
-        <img src={recipe.images.SMALL.url} alt={recipe.label} />
-      </div>
-      <div>
-        {recipe.label}
-      </div>
-      <div>
-        {recipe.source}
-      </div>
-    </article>
+    <Link to={`/recipes/${foodId}`} >
+      <article className={styles.container}>
+        <div>
+          <img src={recipe.images.SMALL.url} alt={recipe.label} />
+        </div>
+        <div>
+          {recipe.label}
+        </div>
+        <div>
+          {recipe.source}
+        </div>
+      </article>
+    </Link>
     )
 }
 
