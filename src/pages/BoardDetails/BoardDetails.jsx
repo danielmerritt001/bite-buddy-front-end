@@ -22,6 +22,8 @@ const BoardDetails = () => {
     }
     fetchBoard()
   }, [boardId])
+
+
 if(board){
   return (  
     <main className={`${styles.container} ${styles.main}`}>
@@ -30,7 +32,9 @@ if(board){
         <div>{board.title}</div>
         <div>by {board.author.name}</div>
       </div>
-      {/* <RecipeCard /> */}
+      {board.recipes.map((recipe, idx) => (
+        <RecipeCard key={board.recipes[idx]._id} recipe={recipe} />
+      ))}
     </main>
   )
 }
