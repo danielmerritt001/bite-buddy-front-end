@@ -9,7 +9,6 @@ const BoardCard = (props) => {
   // console.log(props.profile.boards, 'boards')
   // const boards = props.profile.boards
   // if(boards.length>0){
-    console.log(props.board);
     return (
       <div>
         {props.board.title}
