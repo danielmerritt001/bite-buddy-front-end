@@ -34,7 +34,10 @@ nav {
 }
 
 .navlinks :hover{
-  opacity: 0.8;
+  /* opacity: 0.8; */
+  /* background-color: red; */
+  filter: brightness(110%);
+  border-bottom: 1px white;
 }
 
 span + span{
