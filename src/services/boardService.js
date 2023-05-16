@@ -14,6 +14,18 @@ async function index() {
   }
 }
 
+async function show(boardId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${boardId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
+  show,
 }

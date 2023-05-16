@@ -6,13 +6,15 @@ import styles from './RecipeCard.module.css'
 
 const RecipeCard = (props) => {
   const recipe = props.recipe
-  const foodId = recipe.uri.split('recipe_')[1]
-  console.log(foodId)
+  if(!(recipe.foodId)){
+
+    recipe.foodId = recipe.uri.split('recipe_')[1]
+  }
   return (
-    <Link to={`/recipes/${foodId}`} >
+    <Link to={`/recipes/${recipe.foodId}`} >
       <article className={styles.container}>
         <div>
-          <img src={recipe.images.SMALL.url} alt={recipe.label} />
+          <img src={recipe.image} alt={recipe.label} />
         </div>
         <div>
           {recipe.label}
