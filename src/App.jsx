@@ -38,7 +38,7 @@ function App() {
   useEffect(() =>{
     const fetchAllRecipes = async () => {
       const data = await recipeService.index()
-      setRecipes(data)
+      setRecipes(data.hits)
     }
     if (user) fetchAllRecipes()
   }, [user])
