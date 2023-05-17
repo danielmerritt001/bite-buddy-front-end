@@ -30,43 +30,34 @@ const RecipeList = ( props ) => {
     filterRecipes()
     }, [recipes, currIdx])
 
-  // function updateDisplayedPokemon(forward) {
-  //   if (forward) {
-  //     setDisplayedPokemon(pokeData.filter(function(elem, idx) {
-  //     return ((idx >= currIdx + displayCount) && idx < (currIdx + displayCount + displayCount))
-  //     }))
-  //   } else {
-  //     setDisplayedPokemon(pokeData.filter(function(elem, idx) {
-  //       return ((idx >= currIdx - displayCount) && idx < (currIdx))
-  //       }))
-  //   }
-  // }
+  function handleBack() {
+    if(currIdx >= displayCount) {
+      decreaseCurrIdx()
+    } 
+  }
 
-  // function handleBack() {
-  //   if(currIdx >= displayCount) {
-  //     decreaseCurrIdx()
-  //     updateDisplayedPokemon(false)
-  //   } 
-  // }
-
-  // function handleForward() {
-  //   if(currIdx <= (pokeData.length - displayCount)) {
-  //     increaseCurrIdx()
-  //     updateDisplayedPokemon(true)
-  //   }
-  // }
+  function handleForward() {
+    if(currIdx <= (recipes.length - displayCount)) {
+      increaseCurrIdx()
+    }
+  }
 
   console.log(displayedRecipes)
   if (Array.isArray(displayedRecipes)) {
     return(
       <main className={`${styles.container} ${styles.main}`}>
-      {displayedRecipes.map(recipeSingle => (
-        <RecipeCard key={recipeSingle._id} recipe={recipeSingle.recipe} />
-      ))}
-    </main>
+        <div className="pagination-container">
+        <button onClick={handleBack}>&lt;</button>
+        <div>{1 + currIdx}-{10 + currIdx}</div>
+        <button onClick={handleForward}>&gt;</button>
+      </div>
+        {displayedRecipes.map(recipeSingle => (
+          <RecipeCard key={recipeSingle._id} recipe={recipeSingle.recipe} />
+        ))}
+      </main>
     )
-  } else {
-    <h1>IM STILL GETTING READY!!!</h1>
+    } else {
+      <h1>IM STILL GETTING READY!!!</h1>
   }
 }
 export default RecipeList
