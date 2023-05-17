@@ -32,16 +32,17 @@ button{
   border-radius: 5px;
 }
 
-button :hover{
+button:hover{
   background-color: rgb(1, 100, 161);
 }
 
 a,
 a:visited {
-  color: #00d8ff
+  color: #00d8ff;
+  text-decoration: none;
 }
 
-a :hover{
+a:hover{
   color: white;
   filter: brightness(105%);
 }
