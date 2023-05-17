@@ -79,8 +79,8 @@ function App() {
   }
 
   const handleDeleteBoard = async (boardId) => {
-    const deletedBlog = await boardService.delete(boardId)
-    navigate('/blogs')
+    const deletedBoard = await boardService.delete(boardId)
+    navigate('/boards')
   }
 
   return (

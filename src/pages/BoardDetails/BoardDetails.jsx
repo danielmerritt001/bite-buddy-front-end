@@ -31,11 +31,11 @@ if(board){
       {board.author === props.user?.profile &&
             <>
               <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
-              <button onClick={() => props.handleDeleteBoard(boardId)}>
-                Delete
-              </button>
             </>
-          } 
+          }
+        <button onClick={() => props.handleDeleteBoard(boardId)}>
+          Delete
+        </button>
         <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
       <div id={board.bgColor}>
         <div>{board.title}</div>
