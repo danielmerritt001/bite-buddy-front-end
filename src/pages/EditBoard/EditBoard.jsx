@@ -3,13 +3,11 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 
 // css
-import styles from './EditBlog.module.css'
+import styles from './EditBoard.module.css'
 
-const EditBlog = (props) => {
+const EditBoard = (props) => {
   const location = useLocation()
   const [formData, setFormData] = useState(location.state)
-
-  console.log(location);
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -52,5 +50,5 @@ const EditBlog = (props) => {
     </main>
   )
 }
- 
-export default EditBlog;
+
+export default EditBoard;

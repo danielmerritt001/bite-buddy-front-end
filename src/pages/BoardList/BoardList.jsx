@@ -27,7 +27,7 @@ const BoardList = (props) => {
       <main className={`${styles.container} ${styles.main}`}>
         <h1>Hello, I'm the board list</h1>
         {boards.map((board)=>(
-          <BoardCard key={board._id} board={board}/>
+          (board.recipes.length > 0 ? <BoardCard key={board._id} board={board}/> : <h3 key={board._id}>No Recipes Yet!</h3>)
           ))}
       </main>
     </>

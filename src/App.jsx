@@ -14,6 +14,7 @@ import RecipeDetails from './pages/RecipeDetails/RecipeDetails'
 import BoardList from './pages/BoardList/BoardList'
 import BoardDetails from './pages/BoardDetails/BoardDetails'
 import NewBoard from './pages/NewBoard/NewBoard'
+import EditBoard from './pages/EditBoard/EditBoard'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -69,6 +70,11 @@ function App() {
 
   const handleAddBoard = async (boardFormData) => {
     const newBoard = await boardService.create(boardFormData)
+    navigate('/boards')
+  }
+
+  const handleUpdateBoard = async (boardFormData) => {
+    const updatedBoard = await boardService.update(boardFormData)
     navigate('/boards')
   }
 
@@ -161,6 +167,14 @@ function App() {
           element={
             <BoardDetails handleGetRecipe={handleGetRecipe}/>
           }
+        />
+        <Route 
+          path="/boards/:boardId/edit" 
+          element={
+            <ProtectedRoute user={user}>
+              <EditBoard handleUpdateBoard={handleUpdateBoard} />
+            </ProtectedRoute>
+          } 
         />
       </Routes>
     </>

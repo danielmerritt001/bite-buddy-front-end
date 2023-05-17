@@ -42,8 +42,25 @@ async function create(blogFormData) {
   }
 }
 
+async function update(boardFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${boardFormData._id}`, {
+      method: 'PUT',
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(boardFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
   create,
+  update,
 }
