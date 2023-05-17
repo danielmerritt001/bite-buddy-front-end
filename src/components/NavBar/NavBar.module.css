@@ -34,7 +34,6 @@ nav {
 
 .navlinks :hover{
   filter: brightness(110%);
-  border-bottom: 1px white;
 }
 
 span + span{
