@@ -11,7 +11,7 @@ import * as boardService from '../../services/boardService'
 //css
 import styles from './BoardDetails.module.css'
 
-const BoardDetails = () => {
+const BoardDetails = (props) => {
   const { boardId } = useParams()
   const [board, setBoard] = useState(null)
 
@@ -28,6 +28,15 @@ if(board){
   return (  
     <main className={`${styles.container} ${styles.main}`}>
       <h1>Hello, I'm the Board Details</h1>
+      {board.author === props.user?.profile &&
+            <>
+              <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
+              <button onClick={() => props.handleDeleteBoard(boardId)}>
+                Delete
+              </button>
+            </>
+          } 
+        <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
       <div id={board.bgColor}>
         <div>{board.title}</div>
         <div>by {board.author.name}</div>
