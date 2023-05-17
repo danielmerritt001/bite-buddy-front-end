@@ -32,12 +32,12 @@ const EditBoard = (props) => {
           placeholder="Title"
           onChange={handleChange}
         />
-        <label htmlFor="bgColor-input">Category</label>
+        <label htmlFor="bgColor-input">Background Color</label>
           <select
             required
             name="bgColor"
             id="bgColor-input"
-            value={formData.category}
+            value={formData.bgColor}
             onChange={handleChange}
           >
             <option value="White">White</option>
