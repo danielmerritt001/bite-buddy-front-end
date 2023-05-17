@@ -13,6 +13,7 @@ import RecipeList from './pages/RecipeList/RecipeList'
 import RecipeDetails from './pages/RecipeDetails/RecipeDetails'
 import BoardList from './pages/BoardList/BoardList'
 import BoardDetails from './pages/BoardDetails/BoardDetails'
+import NewBoard from './pages/NewBoard/NewBoard'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -21,6 +22,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as recipeService from './services/recipeService'
+import * as boardService from './services/boardService'
 
 // styles
 import './App.css'
@@ -63,6 +65,11 @@ function App() {
   const handleGetRecipe = async (recipeId) => {
     const recipeObj = await recipeService.show(recipeId)
     return recipeObj
+  }
+
+  const handleAddBoard = async (boardFormData) => {
+    const newBoard = await boardService.create(boardFormData)
+    navigate('/boards')
   }
 
   return (
@@ -145,6 +152,14 @@ function App() {
           path='/boards/:boardId'
           element={
             <BoardDetails handleGetRecipe={handleGetRecipe}/>
+          }
+        />
+        <Route
+          path="/blogs/new" 
+          element={
+            <ProtectedRoute user={user}>
+              <NewBoard handleAddBoard={handleAddBoard} />
+            </ProtectedRoute>
           }
         />
       </Routes>
