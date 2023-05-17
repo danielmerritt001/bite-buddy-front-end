@@ -25,10 +25,16 @@ const BoardList = (props) => {
       <Link to={'/boards/new'}>Create Board
       </Link>
       <main className={`${styles.container} ${styles.main}`}>
-        <h1>Hello, I'm the board list</h1>
+        <h1>Board list</h1>
         {boards.map((board)=>(
-          (board.recipes.length > 0 ? <BoardCard key={board._id} board={board}/> : <h3 key={board._id}>No Recipes Yet!</h3>)
-          ))}
+          (board.recipes.length > 0 
+            ? 
+              <BoardCard key={board._id} board={board}/> 
+            : 
+              <Link to={`/boards/${board._id}`} key={board._id}>
+                {board.title}
+              </Link>
+          )))}
       </main>
     </>
   )

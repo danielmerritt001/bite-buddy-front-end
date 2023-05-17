@@ -8,7 +8,6 @@ const NewBoard = (props) => {
   const [formData, setFormData ] = useState({
     title: '',
     text: '',
-    category: 'News'
   })
 
   const handleChange = (evt) => {
@@ -33,11 +32,11 @@ const NewBoard = (props) => {
             placeholder="Title"
             onChange={handleChange}
           />
-        <label htmlFor="category-input">Category</label>
+        <label htmlFor="bgColor-input">Background Color</label>
           <select
             required
-            name="category"
-            id="category-input"
+            name="bgColor"
+            id="bgColor-input"
             value={formData.category}
             onChange={handleChange}
           >

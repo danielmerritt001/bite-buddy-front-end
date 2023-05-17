@@ -15,13 +15,13 @@ const EditBoard = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    props.handleUpdateBlog(formData)
+    props.handleUpdateBoard(formData)
   }
 
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <h1>Edit Blog</h1>
+        <h1>Edit Board</h1>
         <label htmlFor="title-input">Title</label>
         <input
           required
@@ -32,11 +32,11 @@ const EditBoard = (props) => {
           placeholder="Title"
           onChange={handleChange}
         />
-        <label htmlFor="category-input">Category</label>
+        <label htmlFor="bgColor-input">Category</label>
           <select
             required
-            name="category"
-            id="category-input"
+            name="bgColor"
+            id="bgColor-input"
             value={formData.category}
             onChange={handleChange}
           >
