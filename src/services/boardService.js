@@ -58,9 +58,22 @@ async function update(boardFormData) {
   }
 }
 
+async function deleteBoard(boardId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${boardId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
   create,
   update,
+  deleteBoard as delete,
 }

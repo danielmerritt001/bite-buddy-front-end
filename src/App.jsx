@@ -78,6 +78,11 @@ function App() {
     navigate('/boards')
   }
 
+  const handleDeleteBoard = async (boardId) => {
+    const deletedBlog = await boardService.delete(boardId)
+    navigate('/blogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -165,7 +170,7 @@ function App() {
         <Route 
           path='/boards/:boardId'
           element={
-            <BoardDetails handleGetRecipe={handleGetRecipe}/>
+            <BoardDetails handleGetRecipe={handleGetRecipe} handleDeleteBoard={handleDeleteBoard}/>
           }
         />
         <Route 
