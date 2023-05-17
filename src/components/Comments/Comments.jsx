@@ -2,24 +2,19 @@
 import CommentCard from '../CommentCard/CommentCard'
 
 const Comments = (props) => {
-  if (!props.comments) return <h4>No Comments</h4>
-  if (props.comments.length>0){
-    return (
-    <>
-      {props.comments.map((comment) => (
-        <CommentCard
-          key={comment._id}
-          comment={comment}
-          user={props.user}
-        />
-      ))}
-    </>
-    )
-  }else{
-    return(
-      <CommentCard/>
-    )
-  }
-}
+  const { comments } = props
+  console.log("RECIPE_COMMENTS!!!!", comments);
 
+  if (!comments.length) return <h4>No Comments</h4>
+
+  return (
+    comments.map((comment) => (
+      <CommentCard
+        key={comment._id}
+        comment={comment}
+        user={comment.author}
+      />
+    ))
+  )
+}
 export default Comments

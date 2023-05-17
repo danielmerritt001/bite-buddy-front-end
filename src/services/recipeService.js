@@ -60,6 +60,7 @@ async function update(recipeFormData) {
 
 async function createComment(recipeId, recipeFormData) {
   try {
+    console.log("!!!", recipeFormData, recipeId);
     const res = await fetch(`${BASE_URL}/${recipeId}/comments`, {
       method: 'POST',
       headers: {
@@ -67,6 +68,18 @@ async function createComment(recipeId, recipeFormData) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(recipeFormData)
+    })
+    console.log("RESSSS", res.body);
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function showRecipeComments(recipeId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${recipeId}/comments`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
   } catch (error) {
@@ -79,5 +92,6 @@ export {
   show,
   create,
   update,
-  createComment
+  createComment,
+  showRecipeComments
 }
