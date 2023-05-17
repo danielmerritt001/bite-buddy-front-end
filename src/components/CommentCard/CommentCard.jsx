@@ -4,7 +4,7 @@ import AuthorInfo from '../AuthorInfo/AuthorInfo'
 //css
 import styles from './CommentCard.module.css'
 
-const CommentCard = () => {
+const CommentCard = (props) => {
   return (
     <main className={`${styles.container} ${styles.main}`}>
       <h1>Hello, Im the Comment Card</h1>
