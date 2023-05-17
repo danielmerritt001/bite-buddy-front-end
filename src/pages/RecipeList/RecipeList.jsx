@@ -23,7 +23,7 @@ const RecipeList = ( props ) => {
   useEffect(() => {
     const filterRecipes = async () => {
       const recipeArray = await recipes.filter(function(elem, idx) {
-        return (idx >= currIdx && idx < (currIdx + displayCount))
+        return ((idx >= currIdx) && (idx < (currIdx + displayCount)))
       })
       setDisplayedRecipes(recipeArray)
       }

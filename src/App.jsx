@@ -148,18 +148,18 @@ function App() {
             <BoardList handleGetRecipe={handleGetRecipe}/>
           }
         />
+          <Route
+            path="/boards/new" 
+            element={
+              <ProtectedRoute user={user}>
+                <NewBoard handleAddBoard={handleAddBoard} />
+              </ProtectedRoute>
+            }
+          />
         <Route 
           path='/boards/:boardId'
           element={
             <BoardDetails handleGetRecipe={handleGetRecipe}/>
-          }
-        />
-        <Route
-          path="/blogs/new" 
-          element={
-            <ProtectedRoute user={user}>
-              <NewBoard handleAddBoard={handleAddBoard} />
-            </ProtectedRoute>
           }
         />
       </Routes>
