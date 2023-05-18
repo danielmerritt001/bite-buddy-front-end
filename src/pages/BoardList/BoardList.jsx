@@ -51,8 +51,9 @@ const BoardList = (props) => {
               ?
                 <BoardCard key={board._id} board={board}/> 
               : 
-                <div className={`${styles.nobgselectedboard}`} key={board._id}>
-                  <div className={`${styles.nobgselectedboardtext}`}>
+                <div className={`${board.bgColor}`} key={board._id}>
+                  {console.log('bgcolor',`${board.bgColor}`)}
+                  <div>
                     <Link to={`/boards/${board._id}`}>
                       {board.title}
                     </Link>
@@ -62,7 +63,7 @@ const BoardList = (props) => {
                   </div>
                 </div>
             )
-          ))}
+            ))}
         </div>
       </main>
     </>

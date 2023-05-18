@@ -58,7 +58,7 @@ nav a:hover{
 .Magenta{
   display: flex;
   flex-direction: row;
-  background-color: grey;
+  background-color: magenta;
   color: black;
   width: 300px;
   height: 100px;
@@ -71,7 +71,7 @@ nav a:hover{
 .Cyan{
   display: flex;
   flex-direction: row;
-  background-color: grey;
+  background-color: cyan;
   color: black;
   width: 300px;
   height: 100px;
@@ -97,12 +97,12 @@ nav a:hover{
 .White{
   display: flex;
   flex-direction: row;
-  background-color: grey;
+  background-color: white;
   color: black;
   width: 300px;
   height: 100px;
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
