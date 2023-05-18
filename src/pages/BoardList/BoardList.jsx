@@ -12,6 +12,7 @@ import styles from './BoardList.module.css'
 const BoardList = (props) => {
   const [boards, setBoards] = useState([])
   const [boardQuery, setBoardQuery] = useState('')
+  //if we want a submit form follow hoot new blog form
   useEffect(()=>{
     const fetchBoards = async () => {
       const boardsData = await boardService.index(boardQuery)

@@ -31,10 +31,6 @@ nav {
   padding-right: 10px;
 }
 
-.navlinks > * {
-  padding-left: 15px;
-}
-
 .navlinks:hover {
   filter: brightness(115%);
 }
