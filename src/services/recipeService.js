@@ -97,6 +97,23 @@ async function showRecipeComments(recipeId) {
   }
 }
 
+const updateComment = async (recipeId, commentId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${recipeId}/comments/${commentId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(commentFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 export {
   index,
   show,
@@ -104,5 +121,6 @@ export {
   update,
   createComment,
   showRecipeComments,
-  deleteComment
+  deleteComment,
+  updateComment
 }
