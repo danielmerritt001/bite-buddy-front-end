@@ -1,4 +1,4 @@
-.container {
+.navcontainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -12,7 +12,7 @@ nav > ul {
 nav {
   display: flex;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0px 15px;
   background-image: linear-gradient(#3b4046, black);
   width: 100%;
   height: 65px;
@@ -21,22 +21,22 @@ nav {
 .allnavlinks {
   display: flex;
   position: absolute;
+  padding-bottom: 5px;
+}
+
+.everythingbutlogout{
+  padding-right: 25px;
 }
 
 .navlinks {
   align-items: center;
   text-decoration: none;
   color: inherit;
-  margin-left: auto;
-  padding-right: 10px;
+  margin-left: 20px;
 }
 
 .navlinks:hover {
   filter: brightness(115%);
-}
-
-span + span {
-  padding-left: 5px;
 }
 
 #logout {
@@ -54,9 +54,11 @@ span + span {
   bottom: -15px;
   left: 0;
   right: 0;
+  padding-bottom: 5px;
 }
 
 .navlinks:hover .label {
   visibility: visible;
   opacity: 1;
+  width: fit-content;
 }

@@ -23,7 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav>
       {user ? (
-        <main className={`${styles.container}`}>
+        <main className={`${styles.navcontainer}`}>
           <div className={`${styles.everythingbutlogout}`}>
             <span className={`${styles.navlinks}`}>
               <NavLink to="/">
