@@ -11,21 +11,38 @@ import styles from './BoardList.module.css'
 
 const BoardList = (props) => {
   const [boards, setBoards] = useState([])
-
+  const [boardQuery, setBoardQuery] = useState('')
   useEffect(()=>{
-    const fetchboards = async () => {
-      const boardsData = await boardService.index()
+    const fetchBoards = async () => {
+      const boardsData = await boardService.index(boardQuery)
       setBoards(boardsData)
     }
-    fetchboards()
-  }, [])
+    if(boardQuery){
+      setTimeout(()=>{
+        fetchBoards()
+      }, 1000)
+    }else{
+      fetchBoards()
+    }
+  }, [boardQuery])
 
+  const handleBoardQuery = (e) => {
+    setBoardQuery(e.target.value)
+  }
+  
+  //have an input and when the user creates the input element
+  console.log('BOARRRDQUERRY', boardQuery)
   return (
     <>
+      <main className={`${styles.container} ${styles.main}`}>
       <Link to={'/boards/new'}>Create Board
       </Link>
-      <main className={`${styles.container} ${styles.main}`}>
         <h1>Board list</h1>
+        <input 
+          type='string'
+          name='boardQuery'
+          onChange={handleBoardQuery}
+        />
         {boards.map((board)=>(
           (board.recipes.length > 0 
             ? 
