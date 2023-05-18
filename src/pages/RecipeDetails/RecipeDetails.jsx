@@ -74,8 +74,9 @@ const RecipeDetails = (props) => {
     setRecipeComments(recipeComments.filter((comment) => comment._id !== commentId))
   }
     if (recipe && profile) {
-      console.log(props)
+      
     const recipeDetails = recipe.recipe
+    console.log(recipeDetails)
     return (
       <main className={`${styles.container} ${styles.main}`}>
         <h2>{recipeDetails.label}</h2>
@@ -100,8 +101,16 @@ const RecipeDetails = (props) => {
           </label>
           <button type='submit'>Add</button>
         </form>
-        <div>nutrition placeholder</div>
-        <div>health labels</div>
+        <div>Yields {recipeDetails.yield} Servings</div>
+        <div>Nutrition per Serving:
+          <div>Calories: {Math.floor(recipeDetails.calories/recipeDetails.yield)}</div>
+          <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity/recipeDetails.yield)} g</div>
+          <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity/recipeDetails.yield)} g</div>
+          <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity/recipeDetails.yield)} g</div>
+        </div>
+        <div>health labels
+
+        </div>
         <div>{recipeDetails.mealType}</div>
         <div>Cuisine Type: {recipeDetails.cuisineType}</div>
         <div>Estimated Time: {recipeDetails.totalTime} hours</div>
