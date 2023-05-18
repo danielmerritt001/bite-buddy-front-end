@@ -39,6 +39,7 @@ const BoardList = (props) => {
       </Link>
         <h1>Board list</h1>
         <input 
+          className={`${styles.boardssearchbar}`}
           type='string'
           name='boardQuery'
           onChange={handleBoardQuery}

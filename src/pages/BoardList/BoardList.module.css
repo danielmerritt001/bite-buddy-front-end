@@ -1,3 +1,3 @@
-h1{
-  font-size: xx-large;
+.boardssearchbar:focus {
+  background-color: rgb(209, 254, 252);
 }
