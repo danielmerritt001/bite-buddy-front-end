@@ -100,7 +100,6 @@ const RecipeDetails = (props) => {
           </label>
           <button type='submit'>Add</button>
         </form>
-
         <div>nutrition placeholder</div>
         <div>health labels</div>
         <div>{recipeDetails.mealType}</div>

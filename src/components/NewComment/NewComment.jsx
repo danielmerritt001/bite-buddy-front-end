@@ -4,6 +4,9 @@ import { useState } from "react"
 // css
 import styles from './NewComment.module.css'
 
+//components
+import StarRating from '../../components/StarRating/StarRating'
+
 
 const NewComment = ({ recipe, handleAddComment }) => {
   const recipeLabel = recipe.label
@@ -12,7 +15,13 @@ const NewComment = ({ recipe, handleAddComment }) => {
 
  
   const handleChange = (evt) => {
+    console.log(evt)
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const handleStarChange = (selectedRating) => {
+    console.log(selectedRating)
+    setFormData({ ...formData, rating : selectedRating})
   }
 
   const handleSubmit = (evt) => {
@@ -34,24 +43,9 @@ const NewComment = ({ recipe, handleAddComment }) => {
         value={formData.text}
         placeholder="Add a Comment"
         onChange={handleChange}
-      />
+        />
 
-      <label htmlFor="rating-input">Rating</label>
-        <select
-          required
-          type="number"
-          name="rating"
-          id="rating-input"
-          value={formData.rating}
-          onChange={handleChange}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-
+        <StarRating formData={formData} handleStarChange={handleStarChange}/>
         <button type="submit">Submit</button>
     </form>
   )
