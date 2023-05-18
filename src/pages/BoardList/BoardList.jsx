@@ -31,7 +31,6 @@ const BoardList = (props) => {
     setBoardQuery(e.target.value)
   }
   
-  //have an input and when the user creates the input element
   return (
     <>
       <main className={`${styles.boardslistcontainer} ${styles.main}`}>
@@ -46,7 +45,7 @@ const BoardList = (props) => {
         />
         {boards.map((board)=>(
           (board.recipes.length > 0 
-            ? 
+            ?
               <BoardCard key={board._id} board={board}/> 
             : 
               <Link to={`/boards/${board._id}`} key={board._id}>

@@ -5,6 +5,9 @@
   padding-top: 20px;
 }
 
+.boardssearchbar {
+  margin-bottom: 20px;
+}
 .boardssearchbar:focus {
   background-color: rgb(209, 254, 252);
 }

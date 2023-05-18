@@ -4,6 +4,10 @@
   box-sizing: inherit;
 }
 
+html *{
+  box-sizing: border-box;
+  border: 1px solid red;
+}
 body {
   box-sizing: border-box;
   justify-content: center;
@@ -53,4 +57,47 @@ a:hover{
 nav a:hover{
   color: #00d8ff;
   padding: 0, 0, 0, 15;
+}
+
+.Magenta{
+  background-color: magenta;
+  color:white;
+  max-width: 300px;
+  min-width: 300px;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
+}
+
+.Cyan{
+  background-color: cyan;
+  color: white;
+  max-width: 300px;
+  min-width: 300px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
+}
+
+.Gray{
+  background-color: grey;
+  color: black;
+  max-width: 300px;
+  min-width: 300px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
+}
+
+.White{
+  background-color: white;
+  color: black;
+  max-width: 300px;
+  min-width: 300px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
 }

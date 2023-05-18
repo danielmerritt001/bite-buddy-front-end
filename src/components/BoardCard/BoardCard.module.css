@@ -1,0 +1,19 @@
+.Magenta{
+  background-color: magenta;
+  color:white;
+}
+
+.Cyan{
+  background-color: cyan;
+  color: white;
+}
+
+.Gray{
+  background-color: grey;
+  color: black;
+}
+
+.White{
+  background-color: white;
+  color: black;
+}

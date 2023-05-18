@@ -6,12 +6,9 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import styles from './BoardCard.module.css'
 
 const BoardCard = (props) => {
-  // console.log(props.profile.boards, 'boards')
-  // const boards = props.profile.boards
-  // if(boards.length>0){
     return (
       <Link to={`/boards/${props.board._id}`}>
-        <div>
+        <div className={`${props.board.bgColor}`}>
           {props.board.title}
           {props.board.author.name}
           {props.board.bgColor}
