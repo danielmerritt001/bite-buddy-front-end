@@ -1,16 +1,38 @@
+import { Link } from 'react-router-dom'
+
 //component
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
-
 //css
 import styles from './CommentCard.module.css'
-
-const CommentCard = (props) => {
+const CommentCard = ({comment, user, recipeId, handleDeleteComment }) => {
   return (
-    <main className={`${styles.container} ${styles.main}`}>
-      <h1>Hello, Im the Comment Card</h1>
-      <AuthorInfo />
-    </main>
-    )
+    <article>
+      <header>
+        <span>
+        <AuthorInfo user={user} createdAt={comment.createdAt} />
+          {comment.rating}
+          {comment.author._id === user._id &&
+            <>
+              <Link to={`/recipes/${recipeId}/comments/${comment._id}`} state={comment}>
+                EDIT
+              </Link>
+							<button onClick={()=> handleDeleteComment(recipeId, comment._id)}>
+                DELETE
+              </button>
+            </>
+          }
+        </span>
+      </header>
+      <p>{comment.text}</p>
+    </article>
+  )
 }
-
 export default CommentCard
+
+
+
+// <main className={`${styles.container} ${styles.main}`}>
+// <AuthorInfo user={user} createdAt={comment.createdAt} />
+// <h3>{comment.text}</h3>
+// {comment.rating}
+// </main>

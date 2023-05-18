@@ -8,8 +8,9 @@ import styles from './NewComment.module.css'
 const NewComment = ({ recipe, handleAddComment }) => {
   const recipeLabel = recipe.label
   const recipeFoodId = recipe.uri.split("recipe_")[1]
-  const [formData, setFormData] = useState({ text: '', foodId: recipeFoodId, label: recipeLabel })
+  const [formData, setFormData] = useState({ text: '', foodId: recipeFoodId, label: recipeLabel, rating: 5 })
 
+ 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
@@ -17,7 +18,7 @@ const NewComment = ({ recipe, handleAddComment }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault()
     handleAddComment(formData)
-    setFormData({ text: ''})
+    setFormData({ text: '', rating: 5, foodId: recipeFoodId, label: recipeLabel})
   }
 
   
@@ -38,6 +39,7 @@ const NewComment = ({ recipe, handleAddComment }) => {
       <label htmlFor="rating-input">Rating</label>
         <select
           required
+          type="number"
           name="rating"
           id="rating-input"
           value={formData.rating}
