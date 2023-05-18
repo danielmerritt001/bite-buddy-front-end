@@ -1,3 +1,10 @@
+.boardslistcontainer {
+  border: 1px solid white;
+  max-width: 650px;
+  margin: auto;
+  padding-top: 20px;
+}
+
 .boardssearchbar:focus {
   background-color: rgb(209, 254, 252);
 }

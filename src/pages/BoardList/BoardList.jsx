@@ -34,7 +34,7 @@ const BoardList = (props) => {
   //have an input and when the user creates the input element
   return (
     <>
-      <main className={`${styles.container} ${styles.main}`}>
+      <main className={`${styles.boardslistcontainer} ${styles.main}`}>
       <Link to={'/boards/new'}>Create Board
       </Link>
         <h1>Board list</h1>
