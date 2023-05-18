@@ -15,7 +15,6 @@ import BoardList from './pages/BoardList/BoardList'
 import BoardDetails from './pages/BoardDetails/BoardDetails'
 import NewBoard from './pages/NewBoard/NewBoard'
 import EditBoard from './pages/EditBoard/EditBoard'
-import Loading from './pages/Loading/Loading'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -95,12 +94,6 @@ function App() {
           path="/" 
           element={
             <Landing user={user} />
-          } 
-        />
-        <Route 
-          path="/loading" 
-          element={
-            <Loading user={user} />
           } 
         />
         <Route
