@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom'
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
 //css
 import styles from './CommentCard.module.css'
+
 const CommentCard = ({comment, user, recipeId, handleDeleteComment }) => {
+  const starArray = ['☆☆☆☆☆','★☆☆☆☆','★★☆☆☆', '★★★☆☆', '★★★★☆','★★★★★']
   return (
     <article>
       <header>
         <span>
         <AuthorInfo user={user} createdAt={comment.createdAt} />
-          {comment.rating}
+          {starArray[comment.rating]}
           {comment.author._id === user.profile &&
             <>
               <Link to={`/recipes/${recipeId}/comments/${comment._id}`} state={comment}>
