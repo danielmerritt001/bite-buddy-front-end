@@ -34,7 +34,7 @@ const RecipeList = ( props ) => {
   })
     console.log(filteredRecipes)
   return(
-    <main className={`${styles.container} ${styles.main}`}>
+    <main className={`${styles.recipescontainer} ${styles.main}`}>
             <form onSubmit={props.getSearch} className={`${styles.searchform}`}>
         <input className={`${styles.searchbar}`}
           type="text"
