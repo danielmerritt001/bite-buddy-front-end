@@ -58,8 +58,8 @@ nav a:hover{
 .Magenta{
   background-color: magenta;
   color:white;
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
+  height: 100px;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -69,8 +69,8 @@ nav a:hover{
 .Cyan{
   background-color: cyan;
   color: white;
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
+  height: 100px;
   margin: auto;
   justify-content: center;
   display: flex;
@@ -81,8 +81,8 @@ nav a:hover{
 .Gray{
   background-color: grey;
   color: black;
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
+  height: 100px;
   margin: auto;
   justify-content: center;
   display: flex;
@@ -93,8 +93,8 @@ nav a:hover{
 .White{
   background-color: white;
   color: black;
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
+  height: 100px;
   margin: auto;
   justify-content: center;
   display: flex;

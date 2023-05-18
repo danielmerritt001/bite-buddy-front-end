@@ -12,7 +12,9 @@ const BoardCard = (props) => {
           {props.board.title}
           {props.board.author.name}
           {props.board.bgColor}
-          <img src={props.board.thumbnail} alt="" />
+          <div className={`${styles.image}`}>
+            <img src={props.board.thumbnail}  width="80" alt="board" />
+          </div>
         </div>
       </Link>
     )
