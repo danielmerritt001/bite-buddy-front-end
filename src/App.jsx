@@ -146,7 +146,9 @@ function App() {
         <Route 
           path='/recipes/:recipeId'
           element={
-            <RecipeDetails user={user}/>
+            <ProtectedRoute user={user}>
+              <RecipeDetails user={user}/>
+            </ProtectedRoute>
           }
         />
         <Route
@@ -178,8 +180,9 @@ function App() {
           } 
         />
         <Route path="/recipes/:recipeId/comments/:commentId" element={
-          // <ProtectedRoute user={user}>
+          <ProtectedRoute user={user}>
             <EditComment />
+          </ProtectedRoute>
         } />
       </Routes>
     </>
