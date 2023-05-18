@@ -12,7 +12,7 @@ import cookingpink from '../../assets/icons/familycookingpink.png'
 const Landing = ({ user }) => {
   return (
     <>
-      <main className={`${styles.square} ${styles.container}`}>
+      <main className={`${styles.square} ${styles.landingcontainer}`}>
         <div className={`${styles.square} ${styles.squareone}`}>
           <h1>Bite Buddy</h1>
           <h2>Hey {user ? user.name : 'friend'}! </h2>
