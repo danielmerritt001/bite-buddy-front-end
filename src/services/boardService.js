@@ -69,10 +69,29 @@ async function deleteBoard(boardId) {
   }
 }
 
+async function addRecipeToBoard(formData) {
+  try {
+    console.log('form data', formData)
+    // BASE_URL IS POST http://localhost:3001/api/boards
+    const res = await fetch(`${BASE_URL}/${formData.boardId}/recipes`, {
+      method: 'POST',
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
   create,
   update,
   deleteBoard as delete,
+  addRecipeToBoard,
 }
