@@ -1,9 +1,10 @@
 //modules
 import RecipeCard from '../../components/RecipeCard/RecipeCard'
-import { useState, } from "react"
+import { useState } from "react"
 
 //css
 import styles from './RecipeList.module.css'
+
 
 const RecipeList = ( props ) => {
 

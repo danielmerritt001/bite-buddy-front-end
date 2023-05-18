@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 //component
 import Comments from "../../components/Comments/Comments"
@@ -8,6 +8,8 @@ import NewComment from "../../components/NewComment/NewComment"
 
 // services
 import * as recipeService from '../../services/recipeService'
+import * as profileService from '../../services/profileService'
+import * as boardService from '../../services/boardService'
 
 //css
 import styles from './RecipeDetails.module.css'
@@ -15,9 +17,25 @@ import styles from './RecipeDetails.module.css'
 
 
 const RecipeDetails = (props) => {
+  const navigate = useNavigate()
   const { recipeId } = useParams()
   const [recipe, setRecipe] = useState(null)
   const [recipeComments, setRecipeComments] = useState([])
+  const [formData, setFormData ] = useState({
+    boardId: '',
+    foodId: recipeId,
+  })
+
+  const  profileId  = props.user.profile
+  const [profile, setProfile] = useState(null)
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profileService.show(profileId)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [profileId])
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -28,6 +46,25 @@ const RecipeDetails = (props) => {
     }
     fetchRecipe()
   }, [recipeId])
+
+
+
+  const handleAddToBoard = async (formData) => {
+    const recipeObj = await boardService.addRecipeToBoard(formData)
+    return recipeObj
+  }
+
+  const handleChange = (evt) => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    console.log(formData)
+  }
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
+		handleAddToBoard(formData)
+    navigate(`/boards/${formData.boardId}`)
+  }
+
   const handleAddComment = async (commentFormData) => {
     const newComment = await recipeService.createComment(recipeId, commentFormData)
     setRecipeComments([newComment, ...recipeComments])
@@ -36,7 +73,8 @@ const RecipeDetails = (props) => {
     await recipeService.deleteComment(recipeId, commentId)
     setRecipeComments(recipeComments.filter((comment) => comment._id !== commentId))
   }
-    if (recipe) {
+    if (recipe && profile) {
+      console.log(props)
     const recipeDetails = recipe.recipe
     return (
       <main className={`${styles.container} ${styles.main}`}>
@@ -44,13 +82,25 @@ const RecipeDetails = (props) => {
         <h3>By: {recipeDetails.source}</h3>
         <h5>rating placeholder</h5>
         <img src={recipeDetails.image} alt={recipeDetails.label} />
-        <select name="board">
-          <option value="">---</option>
-          <option value="board1">board1</option>
-          <option value="board2">board2</option>
 
-        </select>
-        <button>Add To Board</button>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="addToBoard-input">Add To Board
+            <select
+            required
+            name='boardId'
+            id='add-to-board-input'
+            value={formData.boardId}
+            onChange={handleChange}>
+              <option value="">---</option>
+              {profile.boards.map(board => (
+                <option key={board._id} value={board._id}>{board.title}</option>
+              )
+              )}
+            </select>
+          </label>
+          <button type='submit'>Add</button>
+        </form>
+
         <div>nutrition placeholder</div>
         <div>health labels</div>
         <div>{recipeDetails.mealType}</div>
