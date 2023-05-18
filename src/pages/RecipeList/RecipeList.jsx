@@ -35,6 +35,16 @@ const RecipeList = ( props ) => {
     console.log(filteredRecipes)
   return(
     <main className={`${styles.container} ${styles.main}`}>
+            <form onSubmit={props.getSearch} className="search-form">
+        <input className="search-bar"
+          type="text"
+          value={props.search}
+          onChange={props.updateSearch}
+          placeholder="Type your favorite ingredients..."/>
+        <button className="search-button" type="submit">
+          Search
+        </button>
+      </form>
       <div className="pagination-container">
       <button onClick={handleBack}>&lt;</button>
       <div>{1 + currIdx}-{10 + currIdx}</div>

@@ -2,12 +2,6 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/recipes`
 
-//take existing index controller
-//use query params to modify requests
-//if query params are present on request, we can make the appropriate call to the edamam api
-//when at controller can look at req.query
-//index will be the function to make the call
-//http://localhost:3001/api/recipes/?q=chicken
 async function index(query) {
   try {
     const res = await fetch(`${BASE_URL}/?q=${query}`, {
@@ -32,7 +26,6 @@ async function show(recipeId) {
 
 async function create(recipeFormData) {
   try {
-    // BASE_URL IS POST http://localhost:3001/api/blogs
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: { 
@@ -74,7 +67,6 @@ async function createComment(recipeId, recipeFormData) {
       },
       body: JSON.stringify(recipeFormData)
     })
-    console.log("RESSSS", res.body);
     return res.json()
   } catch (error) {
     console.log(error)

@@ -89,16 +89,6 @@ function App() {
         <div className="bite-buddy-title">
           <h1><b>Bite Buddy</b></h1>
         </div>
-      <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar"
-          type="text"
-          value={search}
-          onChange={updateSearch}
-          placeholder="Type your favorite ingredients..."/>
-        <button className="search-button" type="submit">
-          Search
-        </button>
-      </form>
       <Routes>
         <Route 
           path="/" 
@@ -143,8 +133,13 @@ function App() {
         <Route
           path='/recipes'
           element={
-          // <ProtectedRoute user={user}>
-            <RecipeList recipes={recipes}/>
+            <RecipeList 
+              recipes={recipes} 
+              query={query} 
+              search={search} 
+              getSearch={getSearch} 
+              updateSearch={updateSearch}
+            />
           }
         />
         <Route 
