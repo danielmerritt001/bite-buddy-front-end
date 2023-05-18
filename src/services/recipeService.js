@@ -2,10 +2,9 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/recipes`
 
-
-async function index() {
+async function index(query) {
   try {
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(`${BASE_URL}/?q=${query}`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
@@ -27,7 +26,6 @@ async function show(recipeId) {
 
 async function create(recipeFormData) {
   try {
-    // BASE_URL IS POST http://localhost:3001/api/blogs
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: { 
@@ -69,7 +67,6 @@ async function createComment(recipeId, recipeFormData) {
       },
       body: JSON.stringify(recipeFormData)
     })
-    console.log("RESSSS", res.body);
     return res.json()
   } catch (error) {
     console.log(error)

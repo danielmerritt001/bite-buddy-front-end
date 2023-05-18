@@ -46,3 +46,8 @@ a:hover{
   color: white;
   filter: brightness(105%);
 }
+
+nav a:hover{
+  color: #00d8ff;
+  padding: 0, 0, 0, 15;
+}
