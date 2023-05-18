@@ -8,6 +8,20 @@
 .boardssearchbar {
   margin-bottom: 20px;
 }
+
 .boardssearchbar:focus {
   background-color: rgb(209, 254, 252);
+}
+
+.nobgselectedboard {
+  background-color: magenta;
+  color: white;
+  max-width: 300px;
+  min-width: 300px;
+  height: 100px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
+  margin-bottom: 20px;
 }

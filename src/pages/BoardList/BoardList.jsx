@@ -34,8 +34,7 @@ const BoardList = (props) => {
   return (
     <>
       <main className={`${styles.boardslistcontainer} ${styles.main}`}>
-      <Link to={'/boards/new'}>Create Board
-      </Link>
+        <Link to={'/boards/new'}>Create Board</Link>
         <h1>Board list</h1>
         <input 
           className={`${styles.boardssearchbar}`}
@@ -48,9 +47,11 @@ const BoardList = (props) => {
             ?
               <BoardCard key={board._id} board={board}/> 
             : 
-              <Link to={`/boards/${board._id}`} key={board._id}>
-                {board.title}
-              </Link>
+              <div className={`${styles.nobgselectedboard}`} key={board._id}>
+                <Link to={`/boards/${board._id}`}>
+                  {board.title}
+                </Link>
+              </div>
           )))}
       </main>
     </>
