@@ -1,6 +1,6 @@
 ![Bite Buddy](/src/assets/icons/bitebuddyicon.png)
 
-# Bite Buddy
+# [Bite Buddy](https://bitebuddyapp.netlify.app/)
 Meet Bite Buddy, your new best friend in the kitchen! 
 
 Our platform lets you curate your own recipe boards, delve into mouth-watering culinary discoveries, and engage with a vibrant community of fellow food enthusiasts.
@@ -24,7 +24,7 @@ Remember, Bite Buddy is more than an app - it's a community where each bite coun
 
 ## 👨‍🍳 Credits and acknowledgements
 * [Edamam - recipe search API](https://www.edamam.com/)
-* [Font TBA](https://fonts.google.com)
+* [Google Fonts](https://fonts.google.com)
 * A special thanks to [Hunter Long](https://github.com/whlong1) for their valuable contributions to this project. Their expertise and dedication significantly enriched the development process
 
 ### Images
@@ -44,7 +44,7 @@ Remember, Bite Buddy is more than an app - it's a community where each bite coun
 * Edamam third-party API
 * Postman
 * Vite
-* JWT Auth
+* JWT token-based authentication
 * Fly.io
 * Netlify
 * Git
