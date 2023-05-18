@@ -17,6 +17,7 @@ import styles from './RecipeDetails.module.css'
 
 
 const RecipeDetails = (props) => {
+  const healthArray = ['Dairy-Free', 'Egg-Free', 'Gluten-Free', 'Kosher', 'Peanut-Free', 'Shellfish-Free', 'Soy-Free', 'Tree-Nut-Free', 'Vegan', 'Vegetarian']
   const navigate = useNavigate()
   const { recipeId } = useParams()
   const [recipe, setRecipe] = useState(null)
@@ -74,8 +75,12 @@ const RecipeDetails = (props) => {
     setRecipeComments(recipeComments.filter((comment) => comment._id !== commentId))
   }
     if (recipe && profile) {
-      console.log(props)
     const recipeDetails = recipe.recipe
+    console.log(recipeDetails)
+    const recipeHealthLabels = healthArray.filter(elem => (
+      recipeDetails.healthLabels.includes(elem)
+    ))
+    console.log(recipeHealthLabels)
     return (
       <main className={`${styles.container} ${styles.main}`}>
         <h2>{recipeDetails.label}</h2>
@@ -100,12 +105,20 @@ const RecipeDetails = (props) => {
           </label>
           <button type='submit'>Add</button>
         </form>
-        <div>nutrition placeholder</div>
-        <div>health labels</div>
+        <div>Yields {recipeDetails.yield} Servings</div>
+        <div>Nutrition per Serving:
+          <div>Calories: {Math.floor(recipeDetails.calories/recipeDetails.yield)}</div>
+          <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity/recipeDetails.yield)} g</div>
+          <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity/recipeDetails.yield)} g</div>
+          <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity/recipeDetails.yield)} g</div>
+        </div>
+        <div>
+          {recipeHealthLabels.map(label => (
+          <div key={label}>{label}</div>
+          ))}
+        </div>
         <div>{recipeDetails.mealType}</div>
         <div>Cuisine Type: {recipeDetails.cuisineType}</div>
-        <div>Estimated Time: {recipeDetails.totalTime} hours</div>
-        <div>Yields {recipeDetails.yield}</div>
         <ul>
         {recipeDetails.ingredients.map((ingredient,idx) => (
         <li key={idx}>{ingredient.text}</li>
