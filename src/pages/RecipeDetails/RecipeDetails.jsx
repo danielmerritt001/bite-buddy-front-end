@@ -19,14 +19,6 @@ const RecipeDetails = (props) => {
   const [recipe, setRecipe] = useState(null)
   const [recipeComments, setRecipeComments] = useState([])
 
-  // useEffect(() => {
-  //   const fetchApiRecipe = async () => {
-  //     const apiRecipeData = await recipeService.show(recipeId)
-  //     setRecipe(apiRecipeData)
-  //   }
-  //   fetchRecipe()
-  // }, [recipeId])
-
   useEffect(() => {
     const fetchRecipe = async () => {
       const recipeCommentsData = await recipeService.showRecipeComments(recipeId)
@@ -36,14 +28,15 @@ const RecipeDetails = (props) => {
     }
     fetchRecipe()
   }, [recipeId])
-
   const handleAddComment = async (commentFormData) => {
     const newComment = await recipeService.createComment(recipeId, commentFormData)
-    setRecipe({ ...recipe, comments: [newComment, ...recipe.comments], })
+    setRecipeComments([newComment, ...recipeComments])
   }
-
-  if (recipe) {
-    console.log(recipe)
+  const handleDeleteComment = async (recipeId, commentId) => {
+    await recipeService.deleteComment(recipeId, commentId)
+    setRecipeComments(recipeComments.filter((comment) => comment._id !== commentId))
+  }
+    if (recipe) {
     const recipeDetails = recipe.recipe
     return (
       <main className={`${styles.container} ${styles.main}`}>
@@ -70,8 +63,13 @@ const RecipeDetails = (props) => {
       ))}
         </ul>
         <a href={recipeDetails.url} target='_blank' rel="noreferrer">Full Recipe Here</a>
-        <NewComment recipe={recipeDetails} handleAddComment={handleAddComment} />
-        <Comments comments={recipeComments}/>
+        <NewComment recipe={recipeDetails} comments={recipeComments} handleAddComment={handleAddComment} />
+        <Comments
+        recipeId={recipeId} 
+        comments={recipeComments}
+        user={props.user}
+        handleDeleteComment={handleDeleteComment}
+        />
       </main>
     )
   }

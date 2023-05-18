@@ -145,7 +145,7 @@ function App() {
         <Route 
           path='/recipes/:recipeId'
           element={
-            <RecipeDetails/>
+            <RecipeDetails user={user}/>
           }
         />
         <Route

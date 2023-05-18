@@ -58,7 +58,6 @@ async function update(recipeFormData) {
 
 async function createComment(recipeId, recipeFormData) {
   try {
-    console.log("!!!", recipeFormData, recipeId);
     const res = await fetch(`${BASE_URL}/${recipeId}/comments`, {
       method: 'POST',
       headers: {
@@ -66,6 +65,20 @@ async function createComment(recipeId, recipeFormData) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(recipeFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const deleteComment = async (recipeId, commentId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${recipeId}/comments/${commentId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
     })
     return res.json()
   } catch (error) {
@@ -84,11 +97,30 @@ async function showRecipeComments(recipeId) {
   }
 }
 
+const updateComment = async (recipeId, commentId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${recipeId}/comments/${commentId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(commentFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 export {
   index,
   show,
   create,
   update,
   createComment,
-  showRecipeComments
+  showRecipeComments,
+  deleteComment,
+  updateComment
 }

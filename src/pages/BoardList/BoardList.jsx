@@ -32,7 +32,6 @@ const BoardList = (props) => {
   }
   
   //have an input and when the user creates the input element
-  console.log('BOARRRDQUERRY', boardQuery)
   return (
     <>
       <main className={`${styles.container} ${styles.main}`}>
