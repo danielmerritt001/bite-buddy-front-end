@@ -1,12 +1,17 @@
 .boardslistcontainer {
+  display: flex;
+  flex-direction: column;
   border: 1px solid white;
   max-width: 650px;
   margin: auto;
   padding-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .boardssearchbar {
   margin-bottom: 20px;
+  margin-right: 16px;
 }
 
 .boardssearchbar:focus {
@@ -18,19 +23,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-}
-
-.nobgselectedboard {
-  background-color: magenta;
-  color: white;
-  max-width: 300px;
-  min-width: 300px;
-  height: 100px;
-  margin: auto;
-  justify-content: center;
-  display: flex;
-  align-items: center; 
-  margin-bottom: 20px;
 }
 
 .tacocat{

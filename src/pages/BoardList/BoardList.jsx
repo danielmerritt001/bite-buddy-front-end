@@ -53,7 +53,7 @@ const BoardList = (props) => {
               : 
                 <div className={`${board.bgColor}`} key={board._id}>
                   {console.log('bgcolor',`${board.bgColor}`)}
-                  <div>
+                  <div className={`${styles.link}`} >
                     <Link to={`/boards/${board._id}`}>
                       {board.title}
                     </Link>
