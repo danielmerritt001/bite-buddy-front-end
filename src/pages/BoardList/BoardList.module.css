@@ -1,3 +1,35 @@
-h1{
-  font-size: xx-large;
+.boardslistcontainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  max-width: 650px;
+  margin: auto;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.boardssearchbar {
+  margin-bottom: 20px;
+  margin-right: 16px;
+}
+
+.boardssearchbar:focus {
+  background-color: rgb(209, 254, 252);
+}
+
+.boardflexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tacocat{
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.nobgselectedboardtext{
+  margin-left: auto;
 }

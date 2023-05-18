@@ -1,6 +1,9 @@
-//modules
+//npm modules
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+
+//assets
+import tacocat from '../../assets/icons/tacocat.png'
 
 //component
 import BoardCard from '../../components/BoardCard/BoardCard'
@@ -31,27 +34,37 @@ const BoardList = (props) => {
     setBoardQuery(e.target.value)
   }
   
-  //have an input and when the user creates the input element
   return (
     <>
-      <main className={`${styles.container} ${styles.main}`}>
-      <Link to={'/boards/new'}>Create Board
-      </Link>
+      <main className={`${styles.boardslistcontainer} ${styles.main}`}>
+        <Link to={'/boards/new'}>Create Board</Link>
         <h1>Board list</h1>
         <input 
+          className={`${styles.boardssearchbar}`}
           type='string'
           name='boardQuery'
           onChange={handleBoardQuery}
         />
-        {boards.map((board)=>(
-          (board.recipes.length > 0 
-            ? 
-              <BoardCard key={board._id} board={board}/> 
-            : 
-              <Link to={`/boards/${board._id}`} key={board._id}>
-                {board.title}
-              </Link>
-          )))}
+        <div className={`${styles.boardflexbox}`}>
+          {boards.map((board)=>(
+            (board.recipes.length > 0 
+              ?
+                <BoardCard key={board._id} board={board}/> 
+              : 
+                <div className={`${board.bgColor}`} key={board._id}>
+                  {console.log('bgcolor',`${board.bgColor}`)}
+                  <div className={`${styles.link}`} >
+                    <Link to={`/boards/${board._id}`}>
+                      {board.title}
+                    </Link>
+                  </div>
+                  <div className={`${styles.tacocat}`} >
+                    <img src={tacocat} width="80" alt="tacocat"/>
+                  </div>
+                </div>
+            )
+            ))}
+        </div>
       </main>
     </>
   )
