@@ -28,7 +28,6 @@ const ProfileList = (props) => {
     <main className={styles.profilelistcontainer}>
       {profiles.map(profile => 
         <>
-          <h3>{profile.name}</h3>
           <ProfileCard profile={profile} />
         </>
         )
