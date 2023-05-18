@@ -5,6 +5,10 @@
   padding-top: 20px;
 }
 
+.searchbar:focus {
+  background-color: rgb(209, 254, 252);
+}
+
 .searchbutton {
   margin-left: 10px;
 }
