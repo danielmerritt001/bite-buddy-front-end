@@ -25,3 +25,12 @@
   align-items: center; 
   margin-bottom: 20px;
 }
+
+.tacocat{
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.nobgselectedboardtext{
+  margin-left: auto;
+}

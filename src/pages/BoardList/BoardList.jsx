@@ -51,10 +51,14 @@ const BoardList = (props) => {
               <BoardCard key={board._id} board={board}/> 
             : 
               <div className={`${styles.nobgselectedboard}`} key={board._id}>
-                <Link to={`/boards/${board._id}`}>
-                  {board.title}
-                </Link>
-                <img src={tacocat} width="100" alt="tacocat"/>
+                <div className={`${styles.nobgselectedboardtext}`}>
+                  <Link to={`/boards/${board._id}`}>
+                    {board.title}
+                  </Link>
+                </div>
+                <div className={`${styles.tacocat}`} >
+                  <img src={tacocat} width="80" alt="tacocat"/>
+                </div>
               </div>
           )))}
       </main>
