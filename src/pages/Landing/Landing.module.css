@@ -3,47 +3,42 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
-  height: 100vh;
+  height: auto;
+  max-height: 90vh;
+  max-width: 90vh;
   padding: 10px;
   border: 1px solid white;
+  box-sizing: border-box;
 }
 
 .square {
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
 
 .squareone {
   grid-column: 1;
   grid-row: 1;
-  height: 100%;
-  width: 100%;
 }
 
 .squaretwo {
   grid-column: 2;
   grid-row: 1;
-  height: 100%;
-  width: 100%;
 }
 
 .squarethree {
   grid-column: 2;
   grid-row: 2;
-  height: 100%;
-  width: 100%;
 }
 
 .squarefour {
   grid-column: 1;
   grid-row: 2;
-  height: 100%;
-  width: 100%;
 }
 
 @media (max-width: 600px) {
-  .container {
+  .landingcontainer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
