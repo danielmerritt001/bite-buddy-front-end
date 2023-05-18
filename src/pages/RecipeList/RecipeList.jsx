@@ -34,26 +34,28 @@ const RecipeList = ( props ) => {
   })
     console.log(filteredRecipes)
   return(
-    <main className={`${styles.recipescontainer} ${styles.main}`}>
-            <form onSubmit={props.getSearch} className={`${styles.searchform}`}>
-        <input className={`${styles.searchbar}`}
-          type="text"
-          value={props.search}
-          onChange={props.updateSearch}
-          placeholder="Type your favorite ingredients..."/>
-        <button className={`${styles.searchbutton}`} type="submit">
-          Search
-        </button>
-      </form>
-      <div className={`${styles.pagination}`}>
-        <button className={`${styles.paginationback}`}onClick={handleBack}>&lt;</button>
-        <div className={`${styles.paginationnumbers}`}>{1 + currIdx}-{10 + currIdx}</div>
-        <button className={`${styles.paginationback}`} onClick={handleForward}>&gt;</button>
-      </div>
-      {filteredRecipes.map((recipeSingle, idx) => (
-        <RecipeCard key={idx} recipe={recipeSingle.recipe} />
-      ))}
-    </main>
+    <>
+      <main className={`${styles.recipescontainer} ${styles.main}`}>
+              <form onSubmit={props.getSearch} className={`${styles.searchform}`}>
+          <input className={`${styles.searchbar}`}
+            type="text"
+            value={props.search}
+            onChange={props.updateSearch}
+            placeholder="Type your favorite ingredients..."/>
+          <button className={`${styles.searchbutton}`} type="submit">
+            Search
+          </button>
+        </form>
+        <div className={`${styles.pagination}`}>
+          <button className={`${styles.paginationback}`}onClick={handleBack}>&lt;</button>
+          <div className={`${styles.paginationnumbers}`}>{1 + currIdx}-{10 + currIdx}</div>
+          <button className={`${styles.paginationback}`} onClick={handleForward}>&gt;</button>
+        </div>
+        {filteredRecipes.map((recipeSingle, idx) => (
+            <RecipeCard key={idx} recipe={recipeSingle.recipe} />
+        ))}
+      </main>
+    </>
   )
 } 
 

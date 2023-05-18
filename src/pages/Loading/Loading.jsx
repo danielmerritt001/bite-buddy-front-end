@@ -7,7 +7,7 @@ import loading from '../../assets/icons/loading.png'
 const Loading = () => {
   return (
     <>
-    <main className={styles.container}>
+    <main className={styles.landingcontainer}>
       <div className={`${styles.image}`}>
         <img src={loading} width='350' height='250'/>
       </div>
