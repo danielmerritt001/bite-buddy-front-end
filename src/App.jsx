@@ -83,7 +83,6 @@ function App() {
     await boardService.delete(boardId)
     navigate('/boards')
   }
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -108,7 +107,9 @@ function App() {
         <Route 
           path='/profiles/:profileId'
           element={
-            <ProfileDetails/>
+            <ProtectedRoute user={user}>
+              <ProfileDetails/>
+            </ProtectedRoute>
           }
         />
         <Route
@@ -134,13 +135,15 @@ function App() {
         <Route
           path='/recipes'
           element={
-            <RecipeList 
-              recipes={recipes} 
-              query={query} 
-              search={search} 
-              getSearch={getSearch} 
-              updateSearch={updateSearch}
-            />
+            <ProtectedRoute user={user}>
+              <RecipeList 
+                recipes={recipes} 
+                query={query} 
+                search={search} 
+                getSearch={getSearch} 
+                updateSearch={updateSearch}
+              />
+            </ProtectedRoute>
           }
         />
         <Route 
@@ -154,7 +157,9 @@ function App() {
         <Route
           path='/boards'
           element={
-            <BoardList handleGetRecipe={handleGetRecipe}/>
+            <ProtectedRoute user={user}>
+              <BoardList handleGetRecipe={handleGetRecipe}/>
+            </ProtectedRoute>
           }
         />
           <Route
@@ -168,7 +173,10 @@ function App() {
         <Route 
           path='/boards/:boardId'
           element={
-            <BoardDetails handleGetRecipe={handleGetRecipe} handleDeleteBoard={handleDeleteBoard}/>
+            <ProtectedRoute user={user}>
+              <BoardDetails handleGetRecipe={handleGetRecipe} handleDeleteBoard={handleDeleteBoard}
+              user={user}/>
+            </ProtectedRoute>
           }
         />
         <Route 

@@ -8,6 +8,7 @@ import NewComment from "../../components/NewComment/NewComment"
 
 // services
 import * as recipeService from '../../services/recipeService'
+import * as profileService from '../../services/profileService'
 
 //css
 import styles from './RecipeDetails.module.css'
@@ -18,6 +19,17 @@ const RecipeDetails = (props) => {
   const { recipeId } = useParams()
   const [recipe, setRecipe] = useState(null)
   const [recipeComments, setRecipeComments] = useState([])
+
+  const  profileId  = props.user.profile
+  const [profile, setProfile] = useState(null)
+console.log(profile)
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profileService.show(profileId)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [profileId])
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -36,7 +48,8 @@ const RecipeDetails = (props) => {
     await recipeService.deleteComment(recipeId, commentId)
     setRecipeComments(recipeComments.filter((comment) => comment._id !== commentId))
   }
-    if (recipe) {
+    if (recipe && profile) {
+      console.log(props)
     const recipeDetails = recipe.recipe
     return (
       <main className={`${styles.container} ${styles.main}`}>
@@ -46,8 +59,10 @@ const RecipeDetails = (props) => {
         <img src={recipeDetails.image} alt={recipeDetails.label} />
         <select name="board">
           <option value="">---</option>
-          <option value="board1">board1</option>
-          <option value="board2">board2</option>
+          {profile.boards.map(board => (
+            <option key={board._id} value={board._id}>{board.title}</option>
+          )
+            )}
 
         </select>
         <button>Add To Board</button>
