@@ -1,4 +1,4 @@
-![Bite Buddy](/src/assets/icons/bitebuddyicon.png)
+![Bite Buddy](/src/assets/icons/bite-buddy-readme-logo.png)
 
 # [Bite Buddy](https://bitebuddyapp.netlify.app/)
 Meet Bite Buddy, your new best friend in the kitchen! 
@@ -22,15 +22,15 @@ Remember, Bite Buddy is more than an app - it's a community where each bite coun
 * [Daniel Merritt](https://github.com/danielmerritt001)
 
 
-## 👨‍🍳 Credits and acknowledgements
+## 👨‍🍳 Credits and acknowledgments
 * [Edamam - recipe search API](https://www.edamam.com/)
 * [Google Fonts](https://fonts.google.com)
 * A special thanks to [Hunter Long](https://github.com/whlong1) for their valuable contributions to this project. Their expertise and dedication significantly enriched the development process
 
 ### Images
-* [Flaticon for Buttons and Icons](https://www.flaticon.com/)
-* [Freeicons.io for profile Icon](https://freeicons.io)
-* [Adobe.stock for images on loading and langind pages](https://stock.adobe.com/search?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent[…]on%5D=0&order=relevance&serie_id=175001291&asset_id=184224951)
+* [Flaticon for buttons and icons](https://www.flaticon.com/)
+* [Freeicons.io for profile icon](https://freeicons.io)
+* [Adobe.stock for images on loading and landing pages](https://stock.adobe.com/search?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent[…]on%5D=0&order=relevance&serie_id=175001291&asset_id=184224951)
 * [Adobe.stock for taco images](https://stock.adobe.com/search?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Avideo%5D=1&filters%5Bcontent_type%3Atemplate%5D=1&filters%5Bcontent_type%3A3d%5D=1&filters%5Bcontent_type%3Aaudio%5D=0&filters%5Binclude_stock_enterprise%5D=0&filters%5Bis_editorial%5D=0&filters%5Bfree_collection%5D=0&filters%5Bcontent_type%3Aimage%5D=1&k=taco+cartoon&order=relevance&safe_search=1&search_page=1&search_type=usertyped&acp=&aco=taco+cartoon&get_facets=0&asset_id=63258911)
 
 
@@ -41,10 +41,10 @@ Remember, Bite Buddy is more than an app - it's a community where each bite coun
 * MongoDB / Mongoose
 * Express
 * RESTful API
-* Edamam third-party API
+* Edamam Third-Party API
 * Postman
 * Vite
-* JWT token-based authentication
+* JWT Token-Based Authentication
 * Fly.io
 * Netlify
 * Git
@@ -58,5 +58,5 @@ Remember, Bite Buddy is more than an app - it's a community where each bite coun
 * Social Media Integration
 * Grocery List Generator based on selected recipes
 * Meal Planning and Calendar to plan meals for the week/month and view them in a calendar format
-* Auto Sorting Boards based on certain features, like most recently saved recipes, meal type or ingredient type
+* Auto Sorting Boards based on certain features, like most recently saved recipes, meal type, or ingredient type
 
