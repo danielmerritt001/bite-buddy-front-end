@@ -86,8 +86,15 @@ const RecipeDetails = (props) => {
         <h2>{recipeDetails.label}</h2>
         <h3>By: {recipeDetails.source}</h3>
         <h5>rating placeholder</h5>
-        <img src={recipeDetails.image} alt={recipeDetails.label} />
-
+        <div className={`${styles.photoAndNutrition}`}>
+          <img src={recipeDetails.image} alt={recipeDetails.label} />
+          <div>Nutrition per Serving:
+            <div>Calories: {Math.floor(recipeDetails.calories/recipeDetails.yield)}</div>
+            <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity/recipeDetails.yield)} g</div>
+            <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity/recipeDetails.yield)} g</div>
+            <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity/recipeDetails.yield)} g</div>
+          </div>
+        </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="addToBoard-input">Add To Board
             <select
@@ -106,12 +113,7 @@ const RecipeDetails = (props) => {
           <button type='submit'>Add</button>
         </form>
         <div>Yields {recipeDetails.yield} Servings</div>
-        <div>Nutrition per Serving:
-          <div>Calories: {Math.floor(recipeDetails.calories/recipeDetails.yield)}</div>
-          <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity/recipeDetails.yield)} g</div>
-          <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity/recipeDetails.yield)} g</div>
-          <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity/recipeDetails.yield)} g</div>
-        </div>
+        
         <div>
           {recipeHealthLabels.map(label => (
           <div key={label}>{label}</div>
