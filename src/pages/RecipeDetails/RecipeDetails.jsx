@@ -119,7 +119,6 @@ const RecipeDetails = (props) => {
         </div>
         <div>{recipeDetails.mealType}</div>
         <div>Cuisine Type: {recipeDetails.cuisineType}</div>
-        <div>Estimated Time: {recipeDetails.totalTime} hours</div>
         <ul>
         {recipeDetails.ingredients.map((ingredient,idx) => (
         <li key={idx}>{ingredient.text}</li>
