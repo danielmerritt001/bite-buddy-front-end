@@ -13,7 +13,7 @@ const NewComment = ({ recipe, handleAddComment }) => {
   const recipeFoodId = recipe.uri.split("recipe_")[1]
   const [formData, setFormData] = useState({ text: '', foodId: recipeFoodId, label: recipeLabel, rating: 5 })
 
- 
+
   const handleChange = (evt) => {
     console.log(evt)
     setFormData({ ...formData, [evt.target.name]: evt.target.value })

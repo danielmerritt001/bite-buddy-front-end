@@ -1,7 +1,7 @@
 import  { useState } from 'react'
 
 const StarRating = (props) => {
-  const [rating, setRating] = useState(0)
+  const [rating, setRating] = useState(3)
 
   const handleStarClick = (selectedRating) => {
     setRating(selectedRating)
