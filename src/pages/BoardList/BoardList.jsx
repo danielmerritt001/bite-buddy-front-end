@@ -45,22 +45,25 @@ const BoardList = (props) => {
           name='boardQuery'
           onChange={handleBoardQuery}
         />
-        {boards.map((board)=>(
-          (board.recipes.length > 0 
-            ?
-              <BoardCard key={board._id} board={board}/> 
-            : 
-              <div className={`${styles.nobgselectedboard}`} key={board._id}>
-                <div className={`${styles.nobgselectedboardtext}`}>
-                  <Link to={`/boards/${board._id}`}>
-                    {board.title}
-                  </Link>
+        <div className={`${styles.boardflexbox}`}>
+          {boards.map((board)=>(
+            (board.recipes.length > 0 
+              ?
+                <BoardCard key={board._id} board={board}/> 
+              : 
+                <div className={`${styles.nobgselectedboard}`} key={board._id}>
+                  <div className={`${styles.nobgselectedboardtext}`}>
+                    <Link to={`/boards/${board._id}`}>
+                      {board.title}
+                    </Link>
+                  </div>
+                  <div className={`${styles.tacocat}`} >
+                    <img src={tacocat} width="80" alt="tacocat"/>
+                  </div>
                 </div>
-                <div className={`${styles.tacocat}`} >
-                  <img src={tacocat} width="80" alt="tacocat"/>
-                </div>
-              </div>
-          )))}
+            )
+          ))}
+        </div>
       </main>
     </>
   )

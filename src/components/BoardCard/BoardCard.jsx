@@ -9,9 +9,14 @@ const BoardCard = (props) => {
     return (
       <Link to={`/boards/${props.board._id}`}>
         <div className={`${props.board.bgColor}`}>
-          {props.board.title}
-          {props.board.author.name}
-          {props.board.bgColor}
+          <div className={`${styles.column}`}>
+            <div className={`${styles.title}`}>
+              {props.board.title}
+            </div>
+            <div className={`${styles.author}`}>
+              {props.board.author.name}
+            </div>
+          </div>
           <div className={`${styles.image}`}>
             <img src={props.board.thumbnail}  width="80" alt="board" />
           </div>

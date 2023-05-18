@@ -56,22 +56,25 @@ nav a:hover{
 }
 
 .Magenta{
-  background-color: magenta;
-  color:white;
+  display: flex;
+  flex-direction: row;
+  background-color: grey;
+  color: black;
   width: 300px;
   height: 100px;
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }
 
 .Cyan{
-  background-color: cyan;
-  color: white;
+  display: flex;
+  flex-direction: row;
+  background-color: grey;
+  color: black;
   width: 300px;
   height: 100px;
-  margin: auto;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -79,11 +82,12 @@ nav a:hover{
 }
 
 .Gray{
+  display: flex;
+  flex-direction: row;
   background-color: grey;
   color: black;
   width: 300px;
   height: 100px;
-  margin: auto;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -91,13 +95,14 @@ nav a:hover{
 }
 
 .White{
-  background-color: white;
+  display: flex;
+  flex-direction: row;
+  background-color: grey;
   color: black;
   width: 300px;
   height: 100px;
-  margin: auto;
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }

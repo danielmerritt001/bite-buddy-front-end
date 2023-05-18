@@ -13,6 +13,13 @@
   background-color: rgb(209, 254, 252);
 }
 
+.boardflexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .nobgselectedboard {
   background-color: magenta;
   color: white;
