@@ -43,6 +43,7 @@ const RecipeDetails = (props) => {
   }
 
   if (recipe) {
+    console.log(recipe)
     const recipeDetails = recipe.recipe
     return (
       <main className={`${styles.container} ${styles.main}`}>
@@ -50,18 +51,27 @@ const RecipeDetails = (props) => {
         <h3>By: {recipeDetails.source}</h3>
         <h5>rating placeholder</h5>
         <img src={recipeDetails.image} alt={recipeDetails.label} />
-        <div>nutrion placeholder</div>
+        <select name="board">
+          <option value="">---</option>
+          <option value="board1">board1</option>
+          <option value="board2">board2</option>
+
+        </select>
+        <button>Add To Board</button>
+        <div>nutrition placeholder</div>
         <div>health labels</div>
         <div>{recipeDetails.mealType}</div>
-        <div>{recipeDetails.cuisineType}</div>
-        <div>{recipeDetails.totalTime} hours</div>
-        <div>ingredients placeholder</div>
-        <div>url link</div>
-
+        <div>Cuisine Type: {recipeDetails.cuisineType}</div>
+        <div>Estimated Time: {recipeDetails.totalTime} hours</div>
+        <div>Yields {recipeDetails.yield}</div>
+        <ul>
+        {recipeDetails.ingredients.map((ingredient,idx) => (
+        <li key={idx}>{ingredient.text}</li>
+      ))}
+        </ul>
+        <a href={recipeDetails.url} target='_blank' rel="noreferrer">Full Recipe Here</a>
         <NewComment recipe={recipeDetails} handleAddComment={handleAddComment} />
-
         <Comments comments={recipeComments}/>
-
       </main>
     )
   }
