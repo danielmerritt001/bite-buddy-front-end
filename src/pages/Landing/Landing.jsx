@@ -19,7 +19,7 @@ const Landing = ({ user }) => {
           <h2>Bake your day better with these recipes!</h2>
         </div>
         <div className={`${styles.square} ${styles.squaretwo}`}>
-          <img src={cookingblue} width='200' height='200'/>
+          <img src={cookingblue} width='300' height='300'/>
         </div>
         <div className={`${styles.square} ${styles.squarethree}`}>
           <h1>Bite Buddy</h1>
@@ -29,7 +29,7 @@ const Landing = ({ user }) => {
           </Link>
         </div>
         <div className={`${styles.square} ${styles.squarefour}`}>
-          <img src={cookingpink} width='200' height='200'/>
+          <img src={cookingpink} width='300' height='300'/>
         </div>
       </main>
     </>
