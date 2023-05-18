@@ -1,3 +1,11 @@
-h1{
-  font-size:large;
+.pagination {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.paginationnumbers{
+  padding-left: 10px;
+  padding-right: 10px;
 }
