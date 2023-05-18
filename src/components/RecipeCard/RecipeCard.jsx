@@ -32,6 +32,3 @@ const RecipeCard = (props) => {
 }
 
 export default RecipeCard
-
-//use get recipe function to do what we want to
-//pass recipe id through each level

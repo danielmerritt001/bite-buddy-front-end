@@ -1,13 +1,10 @@
 //component
 import DateCard from '../DateCard/DateCard'
 
-//css
-import styles from './AuthorInfo.module.css'
-
-const AuthorInfo = ({user, createdAt}) => {
+const AuthorInfo = ({ user, createdAt }) => {
 
   return (
-    <div className={styles.container}>
+    <div>
       <section>
         <h4> {user.name}</h4>
         <DateCard createdAt={createdAt} />
