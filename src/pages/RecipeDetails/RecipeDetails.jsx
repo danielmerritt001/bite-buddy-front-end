@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 //component
 import Comments from "../../components/Comments/Comments"
@@ -17,6 +17,7 @@ import styles from './RecipeDetails.module.css'
 
 
 const RecipeDetails = (props) => {
+  const navigate = useNavigate()
   const { recipeId } = useParams()
   const [recipe, setRecipe] = useState(null)
   const [recipeComments, setRecipeComments] = useState([])
@@ -61,6 +62,7 @@ const RecipeDetails = (props) => {
   const handleSubmit = (evt) => {
     evt.preventDefault()
 		handleAddToBoard(formData)
+    navigate(`/boards/${formData.boardId}`)
   }
 
   const handleAddComment = async (commentFormData) => {
