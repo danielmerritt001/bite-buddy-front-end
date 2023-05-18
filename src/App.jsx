@@ -15,6 +15,7 @@ import BoardList from './pages/BoardList/BoardList'
 import BoardDetails from './pages/BoardDetails/BoardDetails'
 import NewBoard from './pages/NewBoard/NewBoard'
 import EditBoard from './pages/EditBoard/EditBoard'
+import EditComment from './pages/EditComment/EditComment'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -176,6 +177,10 @@ function App() {
             </ProtectedRoute>
           } 
         />
+        <Route path="/recipes/:recipeId/comments/:commentId" element={
+          // <ProtectedRoute user={user}>
+            <EditComment />
+        } />
       </Routes>
     </>
   )
