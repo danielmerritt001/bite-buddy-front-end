@@ -33,15 +33,15 @@ function App() {
   const navigate = useNavigate()
   const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('chicken')
 
   useEffect(() =>{
     const fetchAllRecipes = async () => {
-      const data = await recipeService.index()
+      const data = await recipeService.index(query)
       setRecipes(data.hits)
     }
     if (user) fetchAllRecipes()
-  }, [user])
+  }, [query, user])
 
   const updateSearch = e => {
     setSearch(e.target.value)
@@ -69,17 +69,17 @@ function App() {
   }
 
   const handleAddBoard = async (boardFormData) => {
-    const newBoard = await boardService.create(boardFormData)
+    await boardService.create(boardFormData)
     navigate('/boards')
   }
 
   const handleUpdateBoard = async (boardFormData) => {
-    const updatedBoard = await boardService.update(boardFormData)
+    await boardService.update(boardFormData)
     navigate('/boards')
   }
 
   const handleDeleteBoard = async (boardId) => {
-    const deletedBoard = await boardService.delete(boardId)
+    await boardService.delete(boardId)
     navigate('/boards')
   }
 
