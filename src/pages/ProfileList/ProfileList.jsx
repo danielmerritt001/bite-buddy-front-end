@@ -25,7 +25,7 @@ const ProfileList = (props) => {
   }
   
   return (
-    <main className={styles.container}>
+    <main className={styles.profilelistcontainer}>
       {profiles.map(profile => 
         <>
           <h3>{profile.name}</h3>
