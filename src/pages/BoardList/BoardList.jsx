@@ -1,6 +1,9 @@
-//modules
+//npm modules
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+
+//assets
+import tacocat from '../../assets/icons/tacocat.png'
 
 //component
 import BoardCard from '../../components/BoardCard/BoardCard'
@@ -51,6 +54,7 @@ const BoardList = (props) => {
                 <Link to={`/boards/${board._id}`}>
                   {board.title}
                 </Link>
+                <img src={tacocat} width="100" alt="tacocat"/>
               </div>
           )))}
       </main>
