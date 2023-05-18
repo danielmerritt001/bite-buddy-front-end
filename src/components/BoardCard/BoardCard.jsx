@@ -6,16 +6,20 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import styles from './BoardCard.module.css'
 
 const BoardCard = (props) => {
-  // console.log(props.profile.boards, 'boards')
-  // const boards = props.profile.boards
-  // if(boards.length>0){
     return (
       <Link to={`/boards/${props.board._id}`}>
-        <div>
-          {props.board.title}
-          {props.board.author.name}
-          {props.board.bgColor}
-          <img src={props.board.thumbnail} alt="" />
+        <div className={`${props.board.bgColor}`}>
+          <div className={`${styles.column}`}>
+            <div className={`${styles.title}`}>
+              {props.board.title}
+            </div>
+            <div className={`${styles.author}`}>
+              {props.board.author.name}
+            </div>
+          </div>
+          <div className={`${styles.image}`}>
+            <img src={props.board.thumbnail}  width="80" alt="board" />
+          </div>
         </div>
       </Link>
     )
