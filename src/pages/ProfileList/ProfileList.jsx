@@ -8,9 +8,9 @@ import * as profileService from '../../services/profileService'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 
 // css
-import styles from './Profiles.module.css'
+import styles from './ProfileList.module.css'
 
-const Profiles = (props) => {
+const ProfileList = (props) => {
   const [profiles, setProfiles] = useState([])
   useEffect(() => {
     const fetchProfiles = async () => {
@@ -26,10 +26,9 @@ const Profiles = (props) => {
   
   return (
     <main className={styles.container}>
-      <h1>This is the Profile List</h1>
       {profiles.map(profile => 
         <>
-          <h3>I'm {profile.name}</h3>
+          <h3>{profile.name}</h3>
           <ProfileCard profile={profile} />
         </>
         )
@@ -50,4 +49,4 @@ const Profiles = (props) => {
   )
 }
 
-export default Profiles
+export default ProfileList
