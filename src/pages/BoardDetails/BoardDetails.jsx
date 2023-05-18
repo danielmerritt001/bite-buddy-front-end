@@ -25,18 +25,18 @@ const BoardDetails = (props) => {
 
 
 if(board){
+  console.log(board.author)
   return (  
     <main className={`${styles.container} ${styles.main}`}>
       <h1>Hello, I'm the Board Details</h1>
-      {board.author === props.user?.profile &&
+      {board.author._id === props.user?.profile &&
             <>
               <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
+              <button onClick={() => props.handleDeleteBoard(boardId)}>
+                Delete
+              </button>
             </>
           }
-        <button onClick={() => props.handleDeleteBoard(boardId)}>
-          Delete
-        </button>
-        <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
       <div id={board.bgColor}>
         <div>{board.title}</div>
         <div>by {board.author.name}</div>

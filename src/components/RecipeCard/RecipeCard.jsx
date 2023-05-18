@@ -11,20 +11,24 @@ const RecipeCard = (props) => {
     recipe.foodId = recipe.uri.split('recipe_')[1]
   }
   return (
-    <Link to={`/recipes/${recipe.foodId}`} >
-      <article className={styles.container}>
-        <div>
-          <img src={recipe.image} alt={recipe.label} />
-        </div>
-        <div>
-          {recipe.label}
-        </div>
-        <div>
-          {recipe.source}
-        </div>
-      </article>
-    </Link>
-    )
+    <>
+      <div className={`${styles.recipecardcontainer}`}>
+        <Link to={`/recipes/${recipe.foodId}`} >
+          <article className={styles.container}>
+            <div>
+              <img src={recipe.image} alt={recipe.label} />
+            </div>
+            <div className={`${styles.recipelabel}`}>
+              {recipe.label}
+            </div>
+            <div>
+              {recipe.source}
+            </div>
+          </article>
+        </Link>
+      </div>
+    </>
+  )
 }
 
 export default RecipeCard

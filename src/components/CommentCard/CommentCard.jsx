@@ -11,7 +11,7 @@ const CommentCard = ({comment, user, recipeId, handleDeleteComment }) => {
         <span>
         <AuthorInfo user={user} createdAt={comment.createdAt} />
           {comment.rating}
-          {comment.author._id === user._id &&
+          {comment.author._id === user.profile &&
             <>
               <Link to={`/recipes/${recipeId}/comments/${comment._id}`} state={comment}>
                 EDIT
