@@ -2,10 +2,15 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/recipes`
 
-
-async function index() {
+//take existing index controller
+//use query params to modify requests
+//if query params are present on request, we can make the appropriate call to the edamam api
+//when at controller can look at req.query
+//index will be the function to make the call
+//http://localhost:3001/api/recipes/?q=chicken
+async function index(query) {
   try {
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(`${BASE_URL}/?q=${query}`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
