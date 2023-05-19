@@ -5,8 +5,13 @@ input {
   width: 300px;
 }
 
+input:focus {
+  background-color: rgb(209, 254, 252);
+}
+
 input[type="file"] {
   padding: 0;
+  
 }
 
 .container {
@@ -43,6 +48,13 @@ input[type="file"] {
 
 .button {
   margin-left: 16px;
+  background-color: rgb(1, 100, 248);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  max-width: fit-content;
+  max-height: 30px;
+  padding: 5px;
 }
 
 .form > label:last-of-type {
