@@ -25,7 +25,8 @@ const BoardDetails = (props) => {
 
   if (board) {
     return (
-      <main className={`${styles.container} ${styles.main}`}>
+      <main className={`${styles.main}`}>
+        <div className={`${styles.boarddetailscontainer}`}>
         {board.author._id === props.user?.profile &&
           <>
             <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
@@ -41,6 +42,7 @@ const BoardDetails = (props) => {
         {board.recipes.map((recipe, idx) => (
           <RecipeCard key={board.recipes[idx]._id} recipe={recipe} />
         ))}
+        </div>
       </main>
     )
   }
