@@ -54,7 +54,7 @@ const BoardList = () => {
             className={`${styles.boardssearchbar}`}
             type='string'
             name='boardQuery'
-            placeholder='Search boards...'
+            placeholder='Search your boards...'
             onChange={handleBoardQuery}
           />
           <div className={`${styles.boardflexbox}`}>
