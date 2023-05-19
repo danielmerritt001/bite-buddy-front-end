@@ -66,6 +66,7 @@ input[type="file"] {
   max-width: fit-content;
   max-height: 30px;
   padding: 5px;
+  font-size: 16px;
 }
 
 .form > label:last-of-type {
