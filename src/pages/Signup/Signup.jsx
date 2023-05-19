@@ -16,6 +16,7 @@ const Signup = ({ handleAuthEvt }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    pronouns: '',
     password: '',
     passwordConf: '',
   })
@@ -71,7 +72,7 @@ const Signup = ({ handleAuthEvt }) => {
     }
   }
 
-  const { name, email, password, passwordConf } = formData
+  const { name, pronouns, email, password, passwordConf } = formData
 
   const isFormInvalid = () => {
     return !(name && email && password && password === passwordConf)
@@ -85,6 +86,10 @@ const Signup = ({ handleAuthEvt }) => {
         <label className={styles.label}>
           Name
           <input type="text" value={name} name="name" onChange={handleChange} />
+        </label>
+        <label className={styles.label}>
+          Pronouns
+          <input type="text" value={pronouns} name="pronouns" onChange={handleChange} />
         </label>
         <label className={styles.label}>
           Email
