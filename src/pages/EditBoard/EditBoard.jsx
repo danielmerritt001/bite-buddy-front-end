@@ -46,7 +46,9 @@ const EditBoard = (props) => {
           <option value='pink'>Blush Pink</option>
           <option value='purple'>Lavender</option>
         </select>
-        <button type='submit'>SUBMIT</button>
+        <div className={styles.submitbutton}>
+          <button type='submit'>Submit</button>
+        </div>
       </form>
     </main>
   )
