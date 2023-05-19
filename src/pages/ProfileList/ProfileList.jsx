@@ -26,6 +26,7 @@ const ProfileList = () => {
 
   return (
     <main className={styles.profilelistcontainer}>
+      <h1>Profiles</h1>
       {profiles.map(profile =>
         <ProfileCard key={profile._id} profile={profile} />
       )
