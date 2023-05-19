@@ -1,5 +1,5 @@
 //npm modules
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 //assets
@@ -34,16 +34,24 @@ const BoardList = () => {
     setBoardQuery(e.target.value)
   }
 
+  const navigate = useNavigate()
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
+    navigate('/boards/new')
+  }
+
   return (
     <>
       <main className={`${styles.boardslistcontainer} ${styles.main}`}>
-        <Link to={'/boards/new'}>Create Board</Link>
-        <h1>Board list</h1>
+        <h1>Board List</h1>
+        <button
+          onClick={handleSubmit}>
+            Create Board
+        </button>
         <input
           className={`${styles.boardssearchbar}`}
           type='string'
           name='boardQuery'
-          placeholder='Search boards...'
           onChange={handleBoardQuery}
         />
         <div className={`${styles.boardflexbox}`}>
