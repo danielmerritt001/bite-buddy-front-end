@@ -6,8 +6,7 @@ import styles from './RecipeCard.module.css'
 
 const RecipeCard = (props) => {
   const recipe = props.recipe
-  if(!(recipe.foodId)){
-
+  if (!(recipe.foodId)) {
     recipe.foodId = recipe.uri.split('recipe_')[1]
   }
   return (

@@ -10,7 +10,7 @@ const EditComment = () => {
   const { state } = useLocation()
   const { recipeId, commentId } = useParams()
   const [formData, setFormData] = useState(state)
-  console.log(commentId)
+  
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
   }

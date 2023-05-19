@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 
 const StarRating = (props) => {
   const [rating, setRating] = useState(3)
@@ -6,10 +6,8 @@ const StarRating = (props) => {
   const handleStarClick = (selectedRating) => {
     setRating(selectedRating)
     props.handleStarChange(selectedRating)
-  };
-
+  }
   const stars = [1, 2, 3, 4, 5]
-
   return (
     <div>
       <p>Rating: {rating} stars</p>
@@ -25,7 +23,7 @@ const StarRating = (props) => {
         </span>
       ))}
     </div>
-  );
-};
+  )
+}
 
 export default StarRating

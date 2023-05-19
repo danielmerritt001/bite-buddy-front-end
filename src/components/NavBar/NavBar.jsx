@@ -3,17 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 //assets
 import home from '../../assets/icons/bitebuddyicon.png'
-
 import profiles from '../../assets/icons/profilesicon.png'
-
 import recipes from '../../assets/icons/recipesicon.png'
-
 import boards from '../../assets/icons/boardsicon.png'
-
 import logout from '../../assets/icons/logouticon.png'
-
 import login from '../../assets/icons/loginicon.png'
-
 import signup from '../../assets/icons/signupicon.png'
 
 //css
@@ -49,8 +43,6 @@ const NavBar = ({ user, handleLogout }) => {
                 <span className={`${styles.label}`}>Boards</span>
               </NavLink>
             </span>
-            {/* will put change password into profile */}
-            {/* <span className={`${styles.navlinks}`}><NavLink to="/auth/change-password">Change Password</NavLink></span> */}
           </div>
           <div className={`${styles.logout}`}>
             <span className={`${styles.navlinks}`} id={`${styles.logout}`}>
@@ -78,8 +70,8 @@ const NavBar = ({ user, handleLogout }) => {
         </div>
       )}
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
 

@@ -12,20 +12,20 @@ import * as boardService from '../../services/boardService'
 //css
 import styles from './BoardList.module.css'
 
-const BoardList = (props) => {
+const BoardList = () => {
   const [boards, setBoards] = useState([])
   const [boardQuery, setBoardQuery] = useState('')
-  //if we want a submit form follow hoot new blog form
-  useEffect(()=>{
+
+  useEffect(() => {
     const fetchBoards = async () => {
       const boardsData = await boardService.index(boardQuery)
       setBoards(boardsData)
     }
-    if(boardQuery){
-      setTimeout(()=>{
+    if (boardQuery) {
+      setTimeout(() => {
         fetchBoards()
       }, 1000)
-    }else{
+    } else {
       fetchBoards()
     }
   }, [boardQuery])
@@ -33,37 +33,36 @@ const BoardList = (props) => {
   const handleBoardQuery = (e) => {
     setBoardQuery(e.target.value)
   }
-  
+
   return (
     <>
       <main className={`${styles.boardslistcontainer} ${styles.main}`}>
         <Link to={'/boards/new'}>Create Board</Link>
         <h1>Board list</h1>
-        <input 
+        <input
           className={`${styles.boardssearchbar}`}
           type='string'
           name='boardQuery'
           onChange={handleBoardQuery}
         />
         <div className={`${styles.boardflexbox}`}>
-          {boards.map((board)=>(
-            (board.recipes.length > 0 
+          {boards.map((board) => (
+            (board.recipes.length > 0
               ?
-                <BoardCard key={board._id} board={board}/> 
-              : 
-                <div className={`${board.bgColor}`} key={board._id}>
-                  {console.log('bgcolor',`${board.bgColor}`)}
-                  <div className={`${styles.link}`} >
-                    <Link to={`/boards/${board._id}`}>
-                      {board.title}
-                    </Link>
-                  </div>
-                  <div className={`${styles.tacocat}`} >
-                    <img src={tacocat} width="80" alt="tacocat"/>
-                  </div>
+              <BoardCard key={board._id} board={board} />
+              :
+              <div className={`${board.bgColor}`} key={board._id}>
+                <div className={`${styles.link}`} >
+                  <Link to={`/boards/${board._id}`}>
+                    {board.title}
+                  </Link>
                 </div>
+                <div className={`${styles.tacocat}`} >
+                  <img src={tacocat} width="80" alt="tacocat" />
+                </div>
+              </div>
             )
-            ))}
+          ))}
         </div>
       </main>
     </>

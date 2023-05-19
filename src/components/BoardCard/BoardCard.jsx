@@ -2,7 +2,6 @@
 import { Link } from 'react-router-dom'
 
 //css
-import RecipeCard from '../RecipeCard/RecipeCard'
 import styles from './BoardCard.module.css'
 
 const BoardCard = (props) => {

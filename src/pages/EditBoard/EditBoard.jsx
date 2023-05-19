@@ -33,18 +33,18 @@ const EditBoard = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="bgColor-input">Background Color</label>
-          <select
-            required
-            name="bgColor"
-            id="bgColor-input"
-            value={formData.bgColor}
-            onChange={handleChange}
-          >
-            <option value="White">White</option>
-            <option value="Gray">Gray</option>
-            <option value="Cyan">Cyan</option>
-            <option value="Magenta">Magenta</option>
-          </select>
+        <select
+          required
+          name="bgColor"
+          id="bgColor-input"
+          value={formData.bgColor}
+          onChange={handleChange}
+        >
+          <option value="White">White</option>
+          <option value="Gray">Gray</option>
+          <option value="Cyan">Cyan</option>
+          <option value="Magenta">Magenta</option>
+        </select>
         <button type="submit">SUBMIT</button>
       </form>
     </main>

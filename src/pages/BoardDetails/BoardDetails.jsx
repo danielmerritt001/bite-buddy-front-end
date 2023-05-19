@@ -23,30 +23,27 @@ const BoardDetails = (props) => {
     fetchBoard()
   }, [boardId])
 
-
-if(board){
-  console.log(board.author)
-  return (  
-    <main className={`${styles.container} ${styles.main}`}>
-      <h1>Hello, I'm the Board Details</h1>
-      {board.author._id === props.user?.profile &&
-            <>
-              <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
-              <button onClick={() => props.handleDeleteBoard(boardId)}>
-                Delete
-              </button>
-            </>
-          }
-      <div id={board.bgColor}>
-        <div>{board.title}</div>
-        <div>by {board.author.name}</div>
-      </div>
-      {board.recipes.map((recipe, idx) => (
-        <RecipeCard key={board.recipes[idx]._id} recipe={recipe} />
-      ))}
-    </main>
-  )
-}
+  if (board) {
+    return (
+      <main className={`${styles.container} ${styles.main}`}>
+        {board.author._id === props.user?.profile &&
+          <>
+            <Link to={`/boards/${boardId}/edit`} state={board}>Edit</Link>
+            <button onClick={() => props.handleDeleteBoard(boardId)}>
+              Delete
+            </button>
+          </>
+        }
+        <div id={board.bgColor}>
+          <div>{board.title}</div>
+          <div>by {board.author.name}</div>
+        </div>
+        {board.recipes.map((recipe, idx) => (
+          <RecipeCard key={board.recipes[idx]._id} recipe={recipe} />
+        ))}
+      </main>
+    )
+  }
 }
 
 export default BoardDetails
