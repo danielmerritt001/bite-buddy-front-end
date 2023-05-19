@@ -24,7 +24,6 @@ const NewBoard = (props) => {
       <div className={`${styles.newboardcontainer}`}>
         <form onSubmit={handleSubmit}>
           <div className={`${styles.titleboard}`}>
-            <label htmlFor='title-input'>Title</label>
             <input
               required
               type='text'
@@ -36,8 +35,8 @@ const NewBoard = (props) => {
             />
           </div>
           <div className={`${styles.backgroundcolor}`}>
-          <label htmlFor='bgColor-input'>Background Color</label>
-          <select
+          <label htmlFor='bgColor-input'>Background Color: </label>
+          <select className={`${styles.dropdown}`}
             required
             name='bgColor'
             id='bgColor-input'
