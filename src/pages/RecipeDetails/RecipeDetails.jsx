@@ -53,7 +53,7 @@ const RecipeDetails = (props) => {
   }
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value, label: recipe.recipe.label})
+    setFormData({ ...formData, [evt.target.name]: evt.target.value, label: recipe.recipe.label })
   }
 
   const handleSubmit = (evt) => {
@@ -127,7 +127,7 @@ const RecipeDetails = (props) => {
           ))}
         </div>
         <div className={`${styles.recipe}`}>
-        <a href={recipeDetails.url} target='_blank' rel="noreferrer" >Full Recipe Here</a>
+          <a href={recipeDetails.url} target='_blank' rel="noreferrer" >Full Recipe Here</a>
         </div>
         <NewComment recipe={recipeDetails} comments={recipeComments} handleAddComment={handleAddComment} />
         <Comments

@@ -6,13 +6,13 @@ const Comments = (props) => {
   if (!comments.length) return <h4>No Comments</h4>
   return (
     comments.map((comment, idx) => (
-        <CommentCard
-          key={idx}
-          comment={comment}
-          user={props.user}
-          handleDeleteComment={handleDeleteComment}
-          recipeId={recipeId}
-        />
+      <CommentCard
+        key={idx}
+        comment={comment}
+        user={props.user}
+        handleDeleteComment={handleDeleteComment}
+        recipeId={recipeId}
+      />
     ))
   )
 }
