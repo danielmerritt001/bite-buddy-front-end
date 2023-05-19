@@ -25,6 +25,10 @@
   width: 100%;
 }
 
+.createbutton{
+  margin-bottom: 10px;
+}
+
 .columnboardlist{
   display:flex;
   flex-direction: column;

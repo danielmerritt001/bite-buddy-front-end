@@ -45,6 +45,7 @@ const BoardList = () => {
       <main className={`${styles.boardslistcontainer} ${styles.main}`}>
         <h1>Board List</h1>
         <button
+          className={`${styles.createbutton}`}
           onClick={handleSubmit}>
             Create Board
         </button>
