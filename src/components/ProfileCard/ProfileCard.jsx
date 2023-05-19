@@ -13,7 +13,7 @@ const ProfileCard = ({ profile }) => {
       <Link to={`/profiles/${profile._id}`} >
         <main className={`${styles.profilecardcontainer} ${styles.main}`}>
           <div className={`${styles.profileimage}`}>
-            {profile.image}
+          <img style={{width: '300px'}} src={profile.photo} alt={tacoman} />
           </div>
           <h3>{profile.name}</h3>
           <h4>{profile.boards.length} Boards</h4>
@@ -25,7 +25,7 @@ const ProfileCard = ({ profile }) => {
       <Link to={`/profiles/${profile._id}`} >
         <main className={`${styles.profilecardcontainer} ${styles.main}`}>
           <div className={`${styles.noprofileimage}`}>
-            <img src={tacoman} width='200' alt='tacoman' />
+          <img style={{width: '200px', height: '200px'}} src={profile.photo} alt={tacoman} />
           </div>
           <h3>{profile.name}</h3>
           <h4>{profile.boards.length} Boards</h4>
