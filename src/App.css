@@ -66,6 +66,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-weight:bold;
 }
 
 .gray {
@@ -79,6 +80,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-weight:bold;
 }
 
 .green {
@@ -93,6 +95,7 @@ nav a:hover {
   align-items: center;
   text-align: center;
   margin-bottom: 20px;
+  font-weight:bold;
 }
 
 .pink {
@@ -106,6 +109,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-weight:bold;
 }
 
 .purple {
@@ -119,6 +123,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-weight:bold;
 }
 
 #file-upload-button{
