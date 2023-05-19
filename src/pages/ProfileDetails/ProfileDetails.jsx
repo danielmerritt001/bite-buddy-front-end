@@ -17,7 +17,6 @@ import styles from './ProfileDetails.module.css'
 const ProfileDetails = () => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState(null)
-  console.log(profile);
   useEffect(() => {
     const fetchProfile = async () => {
       const profileData = await profileService.show(profileId)
@@ -32,9 +31,12 @@ const ProfileDetails = () => {
         <h3>Profile: {profile.name}</h3>
         <h3>Prounouns:{profile.pronouns}</h3>
         <img style={{width: '300px', height: '300px'}} src={profile.photo} alt={tacocat} />
+        <div className={styles.boardscontainer}>
+        <h3>Board List</h3>
         {profile.boards.map((board) => (
           (board ? <BoardCard key={board._id} board={board} /> : <h3 key={board._id}>No Recipes Yet!</h3>)
         ))}
+        </div>
       </main>
     )
   }
