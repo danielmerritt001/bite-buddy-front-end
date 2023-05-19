@@ -1,0 +1,30 @@
+.newboardcontainer {
+  border: 1px solid white;
+  width: 650px;
+  height: 100%;
+  margin: auto;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.titleboard{
+  margin-bottom: 10px;  
+}
+
+.dropdown{
+  width: 125px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.backgroundcolor{
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: auto;
+}
