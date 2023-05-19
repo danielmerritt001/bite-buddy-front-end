@@ -8,12 +8,13 @@ import tacoman from '../../assets/icons/tacoman.png'
 import styles from './ProfileCard.module.css'
 
 const ProfileCard = ({ profile }) => {
+  const photo = profile.photo ? profile.photo : tacoman
   if (profile.image) {
     return (
       <Link to={`/profiles/${profile._id}`} >
-        <main className={`${styles.profilecardcontainer} ${styles.main}`}>
+        <main className={`${styles.profilecardcontainer}`}>
           <div className={`${styles.profileimage}`}>
-          <img style={{width: '300px'}} src={profile.photo} alt={tacoman} />
+          <img style={{width: '200px', height: '200px'}} src={photo} alt="Profile Photo" />
           </div>
           <h3>{profile.name}</h3>
           <h4>{profile.boards.length} Boards</h4>
@@ -23,9 +24,9 @@ const ProfileCard = ({ profile }) => {
   } else {
     return (
       <Link to={`/profiles/${profile._id}`} >
-        <main className={`${styles.profilecardcontainer} ${styles.main}`}>
+        <main className={`${styles.profilecardcontainer}`}>
           <div className={`${styles.noprofileimage}`}>
-          <img style={{width: '200px', height: '200px'}} src={profile.photo} alt={tacoman} />
+          <img style={{width: '200px', height: '200px'}} src={photo} alt="Taco Man" />
           </div>
           <h3>{profile.name}</h3>
           <h4>{profile.boards.length} Boards</h4>

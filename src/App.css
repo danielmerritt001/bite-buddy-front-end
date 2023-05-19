@@ -18,6 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  font-family: 'Signika Negative', sans-serif;
 }
 
 h1 {
@@ -33,6 +34,7 @@ button {
   max-width: fit-content;
   max-height: 30px;
   padding: 5px;
+  font-size: 16px;
 }
 
 button:hover {
@@ -134,4 +136,5 @@ nav a:hover {
   max-width: fit-content;
   max-height: 30px;
   padding: 5px;
+  font-size: 16px;
 }

@@ -35,20 +35,20 @@ const NewBoard = (props) => {
             />
           </div>
           <div className={`${styles.backgroundcolor}`}>
-          <label htmlFor='bgColor-input'>Background Color: </label>
-          <select className={`${styles.dropdown}`}
-            required
-            name='bgColor'
-            id='bgColor-input'
-            value={formData.bgColor}
-            onChange={handleChange}
-          >
-            <option value='blue'>Cornflower Blue</option>
-            <option value='gray'>Whisper Gray</option>
-            <option value='green'>Cascade Green</option>
-            <option value='pink'>Blush Pink</option>
-            <option value='purple'>Lavender</option>
-          </select>
+            <label htmlFor='bgColor-input'>Background Color: </label>
+            <select className={`${styles.dropdown}`}
+              required
+              name='bgColor'
+              id='bgColor-input'
+              value={formData.bgColor}
+              onChange={handleChange}
+            >
+              <option value='blue'>Cornflower Blue</option>
+              <option value='gray'>Whisper Gray</option>
+              <option value='green'>Cascade Green</option>
+              <option value='pink'>Blush Pink</option>
+              <option value='purple'>Lavender</option>
+            </select>
           </div>
           <div className={`${styles.submitbutton}`}>
             <button type='submit'>Submit</button>

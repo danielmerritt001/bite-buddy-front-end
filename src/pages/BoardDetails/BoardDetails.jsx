@@ -1,6 +1,8 @@
 //npm modules
 import { useState, useEffect } from 'react'
+
 import { useParams, Link, useNavigate } from 'react-router-dom'
+
 
 // components
 import RecipeCard from '../../components/RecipeCard/RecipeCard'
@@ -14,6 +16,7 @@ import { getAllProfiles } from '../../services/profileService'
 
 const BoardDetails = (props) => {
   const { boardId } = useParams()
+
   const [board, setBoard] = useState({})
   const [recipes, setRecipes] = useState(null)
   const navigate = useNavigate()
@@ -41,11 +44,6 @@ const BoardDetails = (props) => {
     setRecipes(recipes.filter((recipe) => recipe.foodId !== removedRecipe.foodId))
   }
   
-  // const handleRemoveFromBoard = (recipe) => {
-  //   console.log(recipe.foodId)
-  //   navigate('/boards')
-  // }
-
   if (board && recipes) {
     console.log(recipes)
     return (
