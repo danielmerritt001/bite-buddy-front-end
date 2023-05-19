@@ -5,16 +5,14 @@ const Comments = (props) => {
   const { comments, handleDeleteComment, recipeId } = props
   if (!comments.length) return <h4>No Comments</h4>
   return (
-    comments.map((comment) => (
-      <>
+    comments.map((comment, idx) => (
         <CommentCard
-          key={comment._id}
+          key={idx}
           comment={comment}
           user={props.user}
           handleDeleteComment={handleDeleteComment}
           recipeId={recipeId}
         />
-      </>
     ))
   )
 }
