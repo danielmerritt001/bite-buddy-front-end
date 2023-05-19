@@ -1,6 +1,6 @@
 //npm modules
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link} from 'react-router-dom'
 
 // components
 import RecipeCard from '../../components/RecipeCard/RecipeCard'
@@ -14,7 +14,6 @@ import styles from './BoardDetails.module.css'
 const BoardDetails = (props) => {
   const { boardId } = useParams()
   const [board, setBoard] = useState(null)
-
   useEffect(() => {
     const fetchBoard = async () => {
       const boardData = await boardService.show(boardId)
