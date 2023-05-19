@@ -8,3 +8,14 @@
   justify-content: center;
   align-items: center;
 }
+
+.boarddetailstitle {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.boarddetailsauthor {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
