@@ -41,10 +41,10 @@ Remember, Bite Buddy is more than an app - it's a community where each bite coun
 * MongoDB / Mongoose
 * Express
 * RESTful API
-* Edamam Third-Party API
+* Edamam third-party API
 * Postman
 * Vite
-* JWT Token-Based Authentication
+* JWT (JSON Web Tokens) for token-based authentication
 * Fly.io
 * Netlify
 * Git
@@ -55,8 +55,11 @@ Remember, Bite Buddy is more than an app - it's a community where each bite coun
 * Trello
 
 ## 🍦 Ice Box 
-* Social Media Integration
-* Grocery List Generator based on selected recipes
-* Meal Planning and Calendar to plan meals for the week/month and view them in a calendar format
-* Auto Sorting Boards based on certain features, like most recently saved recipes, meal type, or ingredient type
+* Social media integration
+* Grocery list generator based on selected recipes
+* Meal planning and calendar to plan meals for the week/month and view them in a calendar format
+* Auto sorting boards based on certain features, like most recently saved recipes, meal type, or ingredient type
+* Drag-and-drop functionality for boards
+* Background image upload for boards
+
 
