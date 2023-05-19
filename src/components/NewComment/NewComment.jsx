@@ -1,8 +1,5 @@
-// npm imports
+// npm modules
 import { useState } from 'react'
-
-// css
-import styles from './NewComment.module.css'
 
 //components
 import StarRating from '../../components/StarRating/StarRating'
@@ -27,7 +24,7 @@ const NewComment = ({ recipe, handleAddComment }) => {
   }
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <input type='hidden' name='foodId' value={`formData.${recipeFoodId}`}></input>
       <input type='hidden' name='label' value={`${recipeLabel}`}></input>
       <textarea

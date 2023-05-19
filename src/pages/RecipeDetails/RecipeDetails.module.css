@@ -37,7 +37,7 @@
   margin: auto;
 }
 
-.healthLabel{
+.healthLabel {
   font-size: small;
   padding: 5px;
   border: 1px solid white;
@@ -69,12 +69,12 @@
   margin: 5px;
 }
 
-.recipe{
+.recipe {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.addtoboard{
+.addtoboard {
   margin-right: 10px;
   margin-left: 10px;
 }

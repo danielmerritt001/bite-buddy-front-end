@@ -1,3 +1,4 @@
+//modules
 import { useState } from 'react'
 
 const StarRating = (props) => {

@@ -25,12 +25,12 @@
   width: 100%;
 }
 
-.createbutton{
+.createbutton {
   margin-bottom: 10px;
 }
 
-.columnboardlist{
-  display:flex;
+.columnboardlist {
+  display: flex;
   flex-direction: column;
   width: 80%;
   margin-right: 10px;

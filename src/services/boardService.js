@@ -71,7 +71,6 @@ async function deleteBoard(boardId) {
 
 async function addRecipeToBoard(formData) {
   try {
-    console.log(formData.boardId)
     const res = await fetch(`${BASE_URL}/${formData.boardId}/recipes`, {
       method: 'POST',
       headers: {
@@ -88,8 +87,6 @@ async function addRecipeToBoard(formData) {
 
 async function removeRecipeFromBoard(boardId, foodId) {
   try {
-    console.log(boardId)
-    console.log(foodId)
     const res = await fetch(`${BASE_URL}/${boardId}/recipes/${foodId}`, {
       method: 'DELETE',
       headers: {

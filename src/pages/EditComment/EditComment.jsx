@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
-import styles from './EditComment.module.css'
 
 // Services
 import * as recipeService from '../../services/recipeService'
@@ -22,7 +21,7 @@ const EditComment = () => {
   }
 
   return (
-    <main className={styles.container}>
+    <main>
       <form onSubmit={handleSubmit}>
         <h1>Edit Comment</h1>
         <label htmlFor='text-input'>Text</label>
