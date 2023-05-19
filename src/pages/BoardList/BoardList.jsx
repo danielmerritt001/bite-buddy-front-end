@@ -51,16 +51,18 @@ const BoardList = () => {
               ?
               <BoardCard key={board._id} board={board} />
               :
-              <div className={`${board.bgColor}`} key={board._id}>
-                <div className={`${styles.link}`} >
-                  <Link to={`/boards/${board._id}`}>
-                    {board.title}
-                  </Link>
+              <Link to={`/boards/${board._id}`} key={board._id}>
+                <div className={`${board.bgColor}`}>
+                  <div className={`${styles.columnboardlist}`}>
+                    <div className={`${styles.link}`} >
+                      {board.title}
+                    </div>
+                  </div>
+                    <div className={`${styles.tacocat}`} >
+                      <img src={tacocat} width='80' alt='tacocat' />
+                    </div>
                 </div>
-                <div className={`${styles.tacocat}`} >
-                  <img src={tacocat} width='80' alt='tacocat' />
-                </div>
-              </div>
+              </Link>
             )
           ))}
         </div>

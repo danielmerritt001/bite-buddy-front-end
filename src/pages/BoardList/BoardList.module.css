@@ -25,11 +25,15 @@
   width: 100%;
 }
 
+.columnboardlist{
+  display:flex;
+  flex-direction: column;
+  width: 80%;
+  margin-right: 10px;
+  align-items: center;
+}
+
 .tacocat {
   margin-left: auto;
   margin-right: 10px;
-}
-
-.nobgselectedboardtext {
-  margin-left: auto;
 }
