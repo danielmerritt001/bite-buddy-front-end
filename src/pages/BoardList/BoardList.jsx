@@ -42,39 +42,41 @@ const BoardList = () => {
 
   return (
     <>
-      <main className={`${styles.boardslistcontainer} ${styles.main}`}>
-        <h1>Board List</h1>
-        <button
-          className={`${styles.createbutton}`}
-          onClick={handleSubmit}>
-            Create Board
-        </button>
-        <input
-          className={`${styles.boardssearchbar}`}
-          type='string'
-          name='boardQuery'
-          onChange={handleBoardQuery}
-        />
-        <div className={`${styles.boardflexbox}`}>
-          {boards.map((board) => (
-            (board.recipes.length > 0
-              ?
-              <BoardCard key={board._id} board={board} />
-              :
-              <Link to={`/boards/${board._id}`} key={board._id}>
-                <div className={`${board.bgColor}`}>
-                  <div className={`${styles.columnboardlist}`}>
-                    <div className={`${styles.link}`} >
-                      {board.title}
+      <main>
+        <div className={`${styles.boardslistcontainer}`}>
+          <h1>Board List</h1>
+          <button
+            className={`${styles.createbutton}`}
+            onClick={handleSubmit}>
+              Create Board
+          </button>
+          <input
+            className={`${styles.boardssearchbar}`}
+            type='string'
+            name='boardQuery'
+            onChange={handleBoardQuery}
+          />
+          <div className={`${styles.boardflexbox}`}>
+            {boards.map((board) => (
+              (board.recipes.length > 0
+                ?
+                <BoardCard key={board._id} board={board} />
+                :
+                <Link to={`/boards/${board._id}`} key={board._id}>
+                  <div className={`${board.bgColor}`}>
+                    <div className={`${styles.columnboardlist}`}>
+                      <div className={`${styles.link}`} >
+                        {board.title}
+                      </div>
                     </div>
+                      <div className={`${styles.tacocat}`} >
+                        <img src={tacocat} width='80' alt='tacocat' />
+                      </div>
                   </div>
-                    <div className={`${styles.tacocat}`} >
-                      <img src={tacocat} width='80' alt='tacocat' />
-                    </div>
-                </div>
-              </Link>
-            )
-          ))}
+                </Link>
+              )
+            ))}
+          </div>
         </div>
       </main>
     </>
