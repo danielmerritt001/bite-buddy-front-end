@@ -1,3 +1,21 @@
-h1 {
-  font-size: larger;
+.boarddetailscontainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  max-width: 650px;
+  margin: auto;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.boarddetailstitle {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.boarddetailsauthor {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }

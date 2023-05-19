@@ -20,7 +20,7 @@ const RecipeCard = (props) => {
             <div className={`${styles.recipelabel}`}>
               {recipe.label}
             </div>
-            <div>
+            <div  className={`${styles.recipesource}`}>
               {recipe.source}
             </div>
           </article>
