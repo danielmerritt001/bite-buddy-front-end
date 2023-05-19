@@ -85,19 +85,22 @@ const RecipeDetails = (props) => {
     console.log(recipeHealthLabels)
     return (
       <main className={`${styles.container} ${styles.main}`}>
-        <h2>{recipeDetails.label}</h2>
-        <h3>By: {recipeDetails.source}</h3>
-        <h5>rating placeholder</h5>
+        <h1>{recipeDetails.label}</h1>
+        <h4>By: {recipeDetails.source}</h4>
         <div className={`${styles.photoAndNutrition}`}>
+          <div className={`${styles.empty}`}></div>
           <img src={recipeDetails.image} alt={recipeDetails.label} />
-          <div>Nutrition per Serving:
-            <div>Calories: {Math.floor(recipeDetails.calories / recipeDetails.yield)}</div>
-            <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity / recipeDetails.yield)} g</div>
-            <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity / recipeDetails.yield)} g</div>
-            <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity / recipeDetails.yield)} g</div>
+          <div className={`${styles.right}`}>
+            <div className={`${styles.yield}`}>Yields {recipeDetails.yield} Servings</div>
+            <div className={`${styles.nutrition}`}>Nutrition per Serving:
+              <div>Calories: {Math.floor(recipeDetails.calories / recipeDetails.yield)}</div>
+              <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity / recipeDetails.yield)} g</div>
+              <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity / recipeDetails.yield)} g</div>
+              <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity / recipeDetails.yield)} g</div>
+            </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={`${styles.form}`}>
           <label htmlFor="addToBoard-input">Add To Board
             <select
               required
@@ -113,20 +116,23 @@ const RecipeDetails = (props) => {
           </label>
           <button type='submit'>Add</button>
         </form>
-        <div>Yields {recipeDetails.yield} Servings</div>
-        <div>
+        <div className={`${styles.labelsList}`}>
           {recipeHealthLabels.map(label => (
-            <div key={label}>{label}</div>
+            <div key={label} className={`${styles.healthLabel}`}>{label}</div>
           ))}
         </div>
-        <div>{recipeDetails.mealType}</div>
-        <div>Cuisine Type: {recipeDetails.cuisineType}</div>
-        <ul>
+        <div className={`${styles.type}`}>
+          <div>Meal Type: {recipeDetails.mealType}</div>
+          <div>Cuisine Type: {recipeDetails.cuisineType}</div>
+        </div>
+        <div className={`${styles.ingredients}`}>
           {recipeDetails.ingredients.map((ingredient, idx) => (
-            <li key={idx}>{ingredient.text}</li>
+            <div key={idx} className={`${styles.ingredient}`}>{ingredient.text}</div>
           ))}
-        </ul>
-        <a href={recipeDetails.url} target='_blank' rel="noreferrer">Full Recipe Here</a>
+        </div>
+        <div className={`${styles.recipe}`}>
+        <a href={recipeDetails.url} target='_blank' rel="noreferrer" >Full Recipe Here</a>
+        </div>
         <NewComment recipe={recipeDetails} comments={recipeComments} handleAddComment={handleAddComment} />
         <Comments
           recipeId={recipeId}
