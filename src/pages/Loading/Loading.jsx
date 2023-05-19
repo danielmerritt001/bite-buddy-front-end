@@ -13,7 +13,7 @@ const Loading = () => {
           <img src={loading} width='350' height='250' />
         </div>
         <div className={`${styles.marthastewart}`}>
-          <h3>"If you learn something new every day you can teach something new every day." - Martha Stewart</h3>
+          <h3>'If you learn something new every day you can teach something new every day.' - Martha Stewart</h3>
         </div>
       </div>
     </main>

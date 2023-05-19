@@ -1,13 +1,13 @@
 // npm modules
-import { useState } from "react"
+import { useState } from 'react'
 
 // css
 import styles from './NewBoard.module.css'
 
 const NewBoard = (props) => {
   const [formData, setFormData] = useState({
-    title: "",
-    bgColor: "White",
+    title: '',
+    bgColor: 'White',
   })
 
   const handleChange = (evt) => {
@@ -22,31 +22,31 @@ const NewBoard = (props) => {
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title-input">Title</label>
+        <label htmlFor='title-input'>Title</label>
         <input
           required
-          type="text"
-          name="title"
-          id="title-input"
+          type='text'
+          name='title'
+          id='title-input'
           value={formData.title}
-          placeholder="Title"
+          placeholder='Title'
           onChange={handleChange}
         />
-        <label htmlFor="bgColor-input">Background Color</label>
+        <label htmlFor='bgColor-input'>Background Color</label>
         <select
           required
-          name="bgColor"
-          id="bgColor-input"
+          name='bgColor'
+          id='bgColor-input'
           value={formData.bgColor}
           onChange={handleChange}
         >
-          <option value="blue">Blue</option>
-          <option value="gray">Gray</option>
-          <option value="green">Green</option>
-          <option value="pink">Blush Pink</option>
-          <option value="purple">Blush Pink</option>
+          <option value='blue'>Cornflower Blue</option>
+          <option value='gray'>Whisper Gray</option>
+          <option value='green'>Cascade Green</option>
+          <option value='pink'>Blush Pink</option>
+          <option value='purple'>Lavender</option>
         </select>
-        <button type="submit">SUBMIT</button>
+        <button type='submit'>SUBMIT</button>
       </form>
     </main>
   )

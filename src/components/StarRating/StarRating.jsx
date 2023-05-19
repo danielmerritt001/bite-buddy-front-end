@@ -15,7 +15,7 @@ const StarRating = (props) => {
         <span
           key={star}
           value={props.formData.rating}
-          name="rating"
+          name='rating'
           onClick={() => handleStarClick(star)}
           style={{ cursor: 'pointer' }}
         >

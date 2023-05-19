@@ -43,4 +43,4 @@ async function show(profileId) {
   }
 }
 
-export { getAllProfiles, addPhoto , show}
+export { getAllProfiles, addPhoto, show }

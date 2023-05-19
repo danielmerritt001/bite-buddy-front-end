@@ -23,7 +23,7 @@ const Landing = ({ user }) => {
         <div className={`${styles.square} ${styles.squarethree}`}>
           <h1>Bite Buddy</h1>
           <h2>Sign in for some <br></br>spec-taco-lar recipes</h2>
-          <Link to="/auth/login">
+          <Link to='/auth/login'>
             <button>Sign-In</button>
           </Link>
         </div>

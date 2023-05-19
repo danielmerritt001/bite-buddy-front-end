@@ -58,7 +58,7 @@ const BoardList = () => {
                   </Link>
                 </div>
                 <div className={`${styles.tacocat}`} >
-                  <img src={tacocat} width="80" alt="tacocat" />
+                  <img src={tacocat} width='80' alt='tacocat' />
                 </div>
               </div>
             )

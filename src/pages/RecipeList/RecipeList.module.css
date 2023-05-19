@@ -15,13 +15,13 @@
 
 .pagination {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.paginationnumbers{
+.paginationnumbers {
   padding-left: 10px;
   padding-right: 10px;
 }

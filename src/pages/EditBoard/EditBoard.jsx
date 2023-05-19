@@ -1,6 +1,6 @@
 // npm modules
-import { useState } from "react"
-import { useLocation } from "react-router-dom"
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 // css
 import styles from './EditBoard.module.css'
@@ -22,30 +22,30 @@ const EditBoard = (props) => {
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h1>Edit Board</h1>
-        <label htmlFor="title-input">Title</label>
+        <label htmlFor='title-input'>Title</label>
         <input
           required
-          type="text"
-          name="title"
-          id="title-input"
+          type='text'
+          name='title'
+          id='title-input'
           value={formData.title}
-          placeholder="Title"
+          placeholder='Title'
           onChange={handleChange}
         />
-        <label htmlFor="bgColor-input">Background Color</label>
+        <label htmlFor='bgColor-input'>Background Color</label>
         <select
           required
-          name="bgColor"
-          id="bgColor-input"
+          name='bgColor'
+          id='bgColor-input'
           value={formData.bgColor}
           onChange={handleChange}
         >
-          <option value="White">White</option>
-          <option value="Gray">Gray</option>
-          <option value="Cyan">Cyan</option>
-          <option value="Magenta">Magenta</option>
+          <option value='White'>White</option>
+          <option value='Gray'>Gray</option>
+          <option value='Cyan'>Cyan</option>
+          <option value='Magenta'>Magenta</option>
         </select>
-        <button type="submit">SUBMIT</button>
+        <button type='submit'>SUBMIT</button>
       </form>
     </main>
   )

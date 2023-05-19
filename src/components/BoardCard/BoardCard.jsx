@@ -18,7 +18,7 @@ const BoardCard = (props) => {
             </div>
           </div>
           <div className={`${styles.image}`}>
-            <img src={props.board.thumbnail}  width="80" alt="board" />
+            <img src={props.board.thumbnail}  width='80' alt='board' />
           </div>
         </div>
       </Link>

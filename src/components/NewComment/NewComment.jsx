@@ -1,5 +1,5 @@
 // npm imports
-import { useState } from "react"
+import { useState } from 'react'
 
 // css
 import styles from './NewComment.module.css'
@@ -9,7 +9,7 @@ import StarRating from '../../components/StarRating/StarRating'
 
 const NewComment = ({ recipe, handleAddComment }) => {
   const recipeLabel = recipe.label
-  const recipeFoodId = recipe.uri.split("recipe_")[1]
+  const recipeFoodId = recipe.uri.split('recipe_')[1]
   const [formData, setFormData] = useState({ text: '', foodId: recipeFoodId, label: recipeLabel, rating: 5 })
 
   const handleChange = (evt) => {
@@ -28,19 +28,19 @@ const NewComment = ({ recipe, handleAddComment }) => {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <input type="hidden" name="foodId" value={`formData.${recipeFoodId}`}></input>
-      <input type="hidden" name="label" value={`${recipeLabel}`}></input>
+      <input type='hidden' name='foodId' value={`formData.${recipeFoodId}`}></input>
+      <input type='hidden' name='label' value={`${recipeLabel}`}></input>
       <textarea
         required
-        type="text"
-        name="text"
-        id="text-input"
+        type='text'
+        name='text'
+        id='text-input'
         value={formData.text}
-        placeholder="Add a Comment"
+        placeholder='Add a Comment'
         onChange={handleChange}
       />
       <StarRating formData={formData} handleStarChange={handleStarChange} />
-      <button type="submit">Submit</button>
+      <button type='submit'>Submit</button>
     </form>
   )
 }

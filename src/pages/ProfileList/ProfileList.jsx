@@ -10,7 +10,7 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard'
 // css
 import styles from './ProfileList.module.css'
 
-const ProfileList = (props) => {
+const ProfileList = () => {
   const [profiles, setProfiles] = useState([])
   useEffect(() => {
     const fetchProfiles = async () => {
@@ -23,28 +23,14 @@ const ProfileList = (props) => {
   if (!profiles.length) {
     return <main className={styles.container}><h1>Loading...</h1></main>
   }
-  
+
   return (
     <main className={styles.profilelistcontainer}>
-      {profiles.map(profile => 
-        <>
-          <ProfileCard profile={profile} />
-        </>
-        )
+      {profiles.map(profile =>
+        <ProfileCard key={profile._id} profile={profile} />
+      )
       }
     </main>
-
-
-    // <main className={styles.container}>
-    //   <h1>Hello. This is a list of all the profiles.</h1>
-    //   {profiles.map(profile => (
-    //     <>
-    //       <p key={profile._id}>
-    //       {profile.name}</p>
-    //       <ProfileCard profile={profile} handleGetRecipe={props.handleGetRecipe}/>
-    //     </>
-    //   ))}
-    // </main>
   )
 }
 

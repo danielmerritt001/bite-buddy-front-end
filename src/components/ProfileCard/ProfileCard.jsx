@@ -8,7 +8,6 @@ import tacoman from '../../assets/icons/tacoman.png'
 import styles from './ProfileCard.module.css'
 
 const ProfileCard = ({ profile }) => {
-  console.log(profile)
   if (profile.image) {
     return (
       <Link to={`/profiles/${profile._id}`} >
@@ -26,7 +25,7 @@ const ProfileCard = ({ profile }) => {
       <Link to={`/profiles/${profile._id}`} >
         <main className={`${styles.profilecardcontainer} ${styles.main}`}>
           <div className={`${styles.noprofileimage}`}>
-            <img src={tacoman} width="200" alt="tacoman" />
+            <img src={tacoman} width='200' alt='tacoman' />
           </div>
           <h3>{profile.name}</h3>
           <h4>{profile.boards.length} Boards</h4>
