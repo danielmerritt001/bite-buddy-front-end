@@ -43,8 +43,8 @@ const BoardDetails = (props) => {
               by {board.author.name}
             </div>
           </div>
-          {board.recipes.map((recipe) => (
-            <RecipeCard key={recipe._id} recipe={recipe} />
+          {board.recipes.map((recipe, idx) => (
+            <RecipeCard key={idx} recipe={recipe} />
           ))}
         </div>
       </main>
