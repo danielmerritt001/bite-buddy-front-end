@@ -55,10 +55,10 @@ nav a:hover {
   padding: 0, 0, 0, 15;
 }
 
-.Magenta {
+.blue {
   display: flex;
   flex-direction: row;
-  background-color: magenta;
+  background-color: #6498CB;
   color: black;
   width: 300px;
   height: 100px;
@@ -68,10 +68,10 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.Cyan {
+.gray {
   display: flex;
   flex-direction: row;
-  background-color: cyan;
+  background-color: #E5E5E5;
   color: black;
   width: 300px;
   height: 100px;
@@ -81,10 +81,10 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.Gray {
+.green {
   display: flex;
   flex-direction: row;
-  background-color: grey;
+  background-color: #8AB096;
   color: black;
   width: 300px;
   height: 100px;
@@ -95,10 +95,23 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.White {
+.pink {
   display: flex;
   flex-direction: row;
-  background-color: white;
+  background-color: #D4A4A1;
+  color: black;
+  width: 300px;
+  height: 100px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.purple {
+  display: flex;
+  flex-direction: row;
+  background-color: #B38FEF;
   color: black;
   width: 300px;
   height: 100px;
