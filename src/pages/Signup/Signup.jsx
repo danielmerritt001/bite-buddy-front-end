@@ -118,7 +118,7 @@ const Signup = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
-        <label className={styles.label}>
+        <label className={styles.labeluploadphoto}>
           Upload Photo
           <input
             type="file"
