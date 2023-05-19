@@ -43,22 +43,24 @@ nav {
   float: right;
 }
 
-.label {
+.labelnav {
   display: block;
   text-align: center;
+  justify-content: space-between;
   font-size: 12px;
   margin-top: 3px;
-  visibility: hidden;
   opacity: 0;
   position: absolute;
   bottom: -15px;
   left: 0;
   right: 0;
   padding-bottom: 5px;
+  transform: translateX(-10%);
 }
 
-.navlinks:hover .label {
-  visibility: visible;
+.navlinks:hover .labelnav {
   opacity: 1;
   width: fit-content;
+  text-align: center;
+  justify-content: center;
 }
