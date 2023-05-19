@@ -48,7 +48,7 @@ const Landing = ({ user }) => {
         </div>
         <div className={`${styles.square} ${styles.squarethree}`}>
           <h1>Bite Buddy</h1>
-            <h2> Go find some <br></br>spec-taco-lar recipes</h2>
+            <h2> Go find some <br></br>spec-taco-lar recipes!</h2>
           </div>
         <div className={`${styles.square} ${styles.squarefour}`}>
           <img src={cookingpink} width='300' height='300' />
