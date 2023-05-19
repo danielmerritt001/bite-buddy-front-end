@@ -130,8 +130,9 @@ const RecipeDetails = (props) => {
             <div key={idx} className={`${styles.ingredient}`}>{ingredient.text}</div>
           ))}
         </div>
-
-        <a href={recipeDetails.url} target='_blank' rel="noreferrer">Full Recipe Here</a>
+        <div className={`${styles.recipe}`}>
+        <a href={recipeDetails.url} target='_blank' rel="noreferrer" >Full Recipe Here</a>
+        </div>
         <NewComment recipe={recipeDetails} comments={recipeComments} handleAddComment={handleAddComment} />
         <Comments
           recipeId={recipeId}
