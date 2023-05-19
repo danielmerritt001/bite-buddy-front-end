@@ -48,13 +48,13 @@ const BoardList = () => {
           <button
             className={`${styles.createbutton}`}
             onClick={handleSubmit}>
-              Create Board
+            Create Board
           </button>
           <input
             className={`${styles.boardssearchbar}`}
             type='string'
             name='boardQuery'
-            placeholder='Search boards...'
+            placeholder='Search your boards...'
             onChange={handleBoardQuery}
           />
           <div className={`${styles.boardflexbox}`}>
@@ -70,9 +70,9 @@ const BoardList = () => {
                         {board.title}
                       </div>
                     </div>
-                      <div className={`${styles.tacocat}`} >
-                        <img src={tacocat} width='80' alt='tacocat' />
-                      </div>
+                    <div className={`${styles.tacocat}`} >
+                      <img src={tacocat} width='80' alt='tacocat' />
+                    </div>
                   </div>
                 </Link>
               )

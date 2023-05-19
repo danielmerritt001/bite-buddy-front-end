@@ -53,9 +53,7 @@ const RecipeDetails = (props) => {
   }
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value, label: recipe.recipe.label})
-    //delete me at your leisure. but before 11:30AM
-    console.log(formData)
+    setFormData({ ...formData, [evt.target.name]: evt.target.value, label: recipe.recipe.label })
   }
 
   const handleSubmit = (evt) => {
@@ -76,13 +74,9 @@ const RecipeDetails = (props) => {
 
   if (recipe && profile) {
     const recipeDetails = recipe.recipe
-    //Delete
-    console.log(recipeDetails)
     const recipeHealthLabels = healthArray.filter(elem => (
       recipeDetails.healthLabels.includes(elem)
     ))
-    // Delete me too. Do this one by 
-    console.log(recipeHealthLabels)
     return (
       <main className={`${styles.container} ${styles.main}`}>
         <h1>{recipeDetails.label}</h1>
@@ -101,13 +95,15 @@ const RecipeDetails = (props) => {
           </div>
         </div>
         <form onSubmit={handleSubmit} className={`${styles.form}`}>
-          <label htmlFor="addToBoard-input">Add To Board
+          <label
+            htmlFor="addToBoard-input">Add To Board
             <select
               required
               name='boardId'
               id='add-to-board-input'
               value={formData.boardId}
-              onChange={handleChange}>
+              onChange={handleChange}
+              className={`${styles.addtoboard}`}>
               <option value="">---</option>
               {profile.boards.map(board => (
                 <option key={board._id} value={board._id}>{board.title}</option>
@@ -131,7 +127,7 @@ const RecipeDetails = (props) => {
           ))}
         </div>
         <div className={`${styles.recipe}`}>
-        <a href={recipeDetails.url} target='_blank' rel="noreferrer" >Full Recipe Here</a>
+          <a href={recipeDetails.url} target='_blank' rel="noreferrer" >Full Recipe Here</a>
         </div>
         <NewComment recipe={recipeDetails} comments={recipeComments} handleAddComment={handleAddComment} />
         <Comments

@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 
 //component
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
-//css
-import styles from './CommentCard.module.css'
 
 const CommentCard = ({ comment, user, recipeId, handleDeleteComment }) => {
   const starArray = ['☆☆☆☆☆', '★☆☆☆☆', '★★☆☆☆', '★★★☆☆', '★★★★☆', '★★★★★']
@@ -16,10 +14,10 @@ const CommentCard = ({ comment, user, recipeId, handleDeleteComment }) => {
           {comment.author._id === user.profile &&
             <>
               <Link to={`/recipes/${recipeId}/comments/${comment._id}`} state={comment}>
-                EDIT
+                Edit
               </Link>
               <button onClick={() => handleDeleteComment(recipeId, comment._id)}>
-                DELETE
+                Delete
               </button>
             </>
           }
