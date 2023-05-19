@@ -11,7 +11,7 @@ input:focus {
 
 input[type="file"] {
   padding: 0;
-  
+  display: none;
 }
 
 .container {
@@ -46,6 +46,17 @@ input[type="file"] {
   margin-bottom: 8px;
 }
 
+.labeluploadphoto{
+  margin-left: 16px;
+  background-color: rgb(1, 100, 248);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  max-width: fit-content;
+  max-height: 30px;
+  padding: 5px;
+}
+
 .button {
   margin-left: 16px;
   background-color: rgb(1, 100, 248);
@@ -55,6 +66,7 @@ input[type="file"] {
   max-width: fit-content;
   max-height: 30px;
   padding: 5px;
+  font-size: 16px;
 }
 
 .form > label:last-of-type {
