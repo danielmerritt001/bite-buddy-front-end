@@ -1,5 +1,6 @@
 // services
 import * as tokenService from './tokenService'
+
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/recipes`
 
 async function index(query) {
@@ -28,7 +29,7 @@ async function create(recipeFormData) {
   try {
     const res = await fetch(BASE_URL, {
       method: 'POST',
-      headers: { 
+      headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
@@ -44,7 +45,7 @@ async function update(recipeFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${recipeFormData._id}`, {
       method: 'PUT',
-      headers: { 
+      headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
@@ -112,7 +113,6 @@ const updateComment = async (recipeId, commentId, commentFormData) => {
     console.log(error)
   }
 }
-
 
 export {
   index,

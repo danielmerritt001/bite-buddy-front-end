@@ -20,12 +20,12 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-h1{
+h1 {
   font-size: 30px;
   font-weight: 500;
 }
 
-button{
+button {
   background-color: rgb(1, 100, 248);
   color: white;
   cursor: pointer;
@@ -35,7 +35,7 @@ button{
   padding: 5px;
 }
 
-button:hover{
+button:hover {
   background-color: rgb(1, 100, 161);
 }
 
@@ -45,17 +45,17 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   color: white;
   filter: brightness(105%);
 }
 
-nav a:hover{
+nav a:hover {
   color: #00d8ff;
   padding: 0, 0, 0, 15;
 }
 
-.Magenta{
+.Magenta {
   display: flex;
   flex-direction: row;
   background-color: magenta;
@@ -65,10 +65,10 @@ nav a:hover{
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
-.Cyan{
+.Cyan {
   display: flex;
   flex-direction: row;
   background-color: cyan;
@@ -78,10 +78,10 @@ nav a:hover{
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
-.Gray{
+.Gray {
   display: flex;
   flex-direction: row;
   background-color: grey;
@@ -92,10 +92,10 @@ nav a:hover{
   display: flex;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
-.White{
+.White {
   display: flex;
   flex-direction: row;
   background-color: white;

@@ -2,7 +2,6 @@
 import { Link } from 'react-router-dom'
 
 //css
-import RecipeCard from '../RecipeCard/RecipeCard'
 import styles from './BoardCard.module.css'
 
 const BoardCard = (props) => {
@@ -19,7 +18,7 @@ const BoardCard = (props) => {
             </div>
           </div>
           <div className={`${styles.image}`}>
-            <img src={props.board.thumbnail}  width="80" alt="board" />
+            <img src={props.board.thumbnail}  width='80' alt='board' />
           </div>
         </div>
       </Link>

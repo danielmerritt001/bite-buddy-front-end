@@ -14,20 +14,18 @@ import * as boardService from '../../services/boardService'
 //css
 import styles from './RecipeDetails.module.css'
 
-
-
 const RecipeDetails = (props) => {
   const healthArray = ['Dairy-Free', 'Egg-Free', 'Gluten-Free', 'Kosher', 'Peanut-Free', 'Shellfish-Free', 'Soy-Free', 'Tree-Nut-Free', 'Vegan', 'Vegetarian']
   const navigate = useNavigate()
   const { recipeId } = useParams()
   const [recipe, setRecipe] = useState(null)
   const [recipeComments, setRecipeComments] = useState([])
-  const [formData, setFormData ] = useState({
+  const [formData, setFormData] = useState({
     boardId: '',
     foodId: recipeId,
   })
 
-  const  profileId  = props.user.profile
+  const profileId = props.user.profile
   const [profile, setProfile] = useState(null)
 
   useEffect(() => {
@@ -48,8 +46,6 @@ const RecipeDetails = (props) => {
     fetchRecipe()
   }, [recipeId])
 
-
-
   const handleAddToBoard = async (formData) => {
     const recipeObj = await boardService.addRecipeToBoard(formData)
     return recipeObj
@@ -57,12 +53,13 @@ const RecipeDetails = (props) => {
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    //delete me at your leisure. but before 11:30AM
     console.log(formData)
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-		handleAddToBoard(formData)
+    handleAddToBoard(formData)
     navigate(`/boards/${formData.boardId}`)
   }
 
@@ -70,16 +67,20 @@ const RecipeDetails = (props) => {
     const newComment = await recipeService.createComment(recipeId, commentFormData)
     setRecipeComments([newComment, ...recipeComments])
   }
+
   const handleDeleteComment = async (recipeId, commentId) => {
     await recipeService.deleteComment(recipeId, commentId)
     setRecipeComments(recipeComments.filter((comment) => comment._id !== commentId))
   }
-    if (recipe && profile) {
+
+  if (recipe && profile) {
     const recipeDetails = recipe.recipe
+    //Delete
     console.log(recipeDetails)
     const recipeHealthLabels = healthArray.filter(elem => (
       recipeDetails.healthLabels.includes(elem)
     ))
+    // Delete me too. Do this one by 
     console.log(recipeHealthLabels)
     return (
       <main className={`${styles.container} ${styles.main}`}>
@@ -89,53 +90,52 @@ const RecipeDetails = (props) => {
         <div className={`${styles.photoAndNutrition}`}>
           <img src={recipeDetails.image} alt={recipeDetails.label} />
           <div>Nutrition per Serving:
-            <div>Calories: {Math.floor(recipeDetails.calories/recipeDetails.yield)}</div>
-            <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity/recipeDetails.yield)} g</div>
-            <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity/recipeDetails.yield)} g</div>
-            <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity/recipeDetails.yield)} g</div>
+            <div>Calories: {Math.floor(recipeDetails.calories / recipeDetails.yield)}</div>
+            <div>Fat: {Math.floor(recipeDetails.totalNutrients.FAT.quantity / recipeDetails.yield)} g</div>
+            <div>Carbs: {Math.floor(recipeDetails.totalNutrients.CHOCDF.quantity / recipeDetails.yield)} g</div>
+            <div>Protein: {Math.floor(recipeDetails.totalNutrients.PROCNT.quantity / recipeDetails.yield)} g</div>
           </div>
         </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="addToBoard-input">Add To Board
             <select
-            required
-            name='boardId'
-            id='add-to-board-input'
-            value={formData.boardId}
-            onChange={handleChange}>
+              required
+              name='boardId'
+              id='add-to-board-input'
+              value={formData.boardId}
+              onChange={handleChange}>
               <option value="">---</option>
               {profile.boards.map(board => (
                 <option key={board._id} value={board._id}>{board.title}</option>
-              )
-              )}
+              ))}
             </select>
           </label>
           <button type='submit'>Add</button>
         </form>
         <div>Yields {recipeDetails.yield} Servings</div>
-        
         <div>
           {recipeHealthLabels.map(label => (
-          <div key={label}>{label}</div>
+            <div key={label}>{label}</div>
           ))}
         </div>
         <div>{recipeDetails.mealType}</div>
         <div>Cuisine Type: {recipeDetails.cuisineType}</div>
         <ul>
-        {recipeDetails.ingredients.map((ingredient,idx) => (
-        <li key={idx}>{ingredient.text}</li>
-      ))}
+          {recipeDetails.ingredients.map((ingredient, idx) => (
+            <li key={idx}>{ingredient.text}</li>
+          ))}
         </ul>
         <a href={recipeDetails.url} target='_blank' rel="noreferrer">Full Recipe Here</a>
         <NewComment recipe={recipeDetails} comments={recipeComments} handleAddComment={handleAddComment} />
         <Comments
-        recipeId={recipeId} 
-        comments={recipeComments}
-        user={props.user}
-        handleDeleteComment={handleDeleteComment}
+          recipeId={recipeId}
+          comments={recipeComments}
+          user={props.user}
+          handleDeleteComment={handleDeleteComment}
         />
       </main>
     )
   }
 }
+
 export default RecipeDetails

@@ -36,7 +36,7 @@ function App() {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('chicken')
 
-  useEffect(() =>{
+  useEffect(() => {
     const fetchAllRecipes = async () => {
       const data = await recipeService.index(query)
       setRecipes(data.hits)
@@ -46,7 +46,6 @@ function App() {
 
   const updateSearch = e => {
     setSearch(e.target.value)
-    console.log(query)
   }
 
   const getSearch = e => {
@@ -63,7 +62,7 @@ function App() {
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
-  
+
   const handleGetRecipe = async (recipeId) => {
     const recipeObj = await recipeService.show(recipeId)
     return recipeObj
@@ -86,46 +85,46 @@ function App() {
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
-        <div className="bite-buddy-title">
-          <h1><b>Bite Buddy</b></h1>
-        </div>
+      <div className='bite-buddy-title'>
+        <h1><b>Bite Buddy</b></h1>
+      </div>
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path='/'
           element={
             <Landing user={user} />
-          } 
+          }
         />
         <Route
-          path="/profiles"
+          path='/profiles'
           element={
             <ProtectedRoute user={user}>
-              <ProfileList handleGetRecipe={handleGetRecipe}/>
+              <ProfileList handleGetRecipe={handleGetRecipe} />
             </ProtectedRoute>
           }
         />
-        <Route 
+        <Route
           path='/profiles/:profileId'
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails/>
+              <ProfileDetails />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/auth/signup"
+          path='/auth/signup'
           element={
             <Signup handleAuthEvt={handleAuthEvt} />
           }
         />
         <Route
-          path="/auth/login"
+          path='/auth/login'
           element={
             <Login handleAuthEvt={handleAuthEvt} />
           }
         />
         <Route
-          path="/auth/change-password"
+          path='/auth/change-password'
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
@@ -136,21 +135,21 @@ function App() {
           path='/recipes'
           element={
             <ProtectedRoute user={user}>
-              <RecipeList 
-                recipes={recipes} 
-                query={query} 
-                search={search} 
-                getSearch={getSearch} 
+              <RecipeList
+                recipes={recipes}
+                query={query}
+                search={search}
+                getSearch={getSearch}
                 updateSearch={updateSearch}
               />
             </ProtectedRoute>
           }
         />
-        <Route 
+        <Route
           path='/recipes/:recipeId'
           element={
             <ProtectedRoute user={user}>
-              <RecipeDetails user={user}/>
+              <RecipeDetails user={user} />
             </ProtectedRoute>
           }
         />
@@ -158,36 +157,36 @@ function App() {
           path='/boards'
           element={
             <ProtectedRoute user={user}>
-              <BoardList handleGetRecipe={handleGetRecipe}/>
+              <BoardList handleGetRecipe={handleGetRecipe} />
             </ProtectedRoute>
           }
         />
-          <Route
-            path="/boards/new" 
-            element={
-              <ProtectedRoute user={user}>
-                <NewBoard handleAddBoard={handleAddBoard} />
-              </ProtectedRoute>
-            }
-          />
-        <Route 
+        <Route
+          path='/boards/new'
+          element={
+            <ProtectedRoute user={user}>
+              <NewBoard handleAddBoard={handleAddBoard} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path='/boards/:boardId'
           element={
             <ProtectedRoute user={user}>
               <BoardDetails handleGetRecipe={handleGetRecipe} handleDeleteBoard={handleDeleteBoard}
-              user={user}/>
+                user={user} />
             </ProtectedRoute>
           }
         />
-        <Route 
-          path="/boards/:boardId/edit" 
+        <Route
+          path='/boards/:boardId/edit'
           element={
             <ProtectedRoute user={user}>
               <EditBoard handleUpdateBoard={handleUpdateBoard} />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route path="/recipes/:recipeId/comments/:commentId" element={
+        <Route path='/recipes/:recipeId/comments/:commentId' element={
           <ProtectedRoute user={user}>
             <EditComment />
           </ProtectedRoute>

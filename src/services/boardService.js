@@ -1,5 +1,6 @@
 // services
 import * as tokenService from './tokenService'
+
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/boards`
 
 async function index(boardQuery) {
@@ -26,10 +27,9 @@ async function show(boardId) {
 
 async function create(blogFormData) {
   try {
-    // BASE_URL IS POST http://localhost:3001/api/boards
     const res = await fetch(BASE_URL, {
       method: 'POST',
-      headers: { 
+      headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
@@ -45,7 +45,7 @@ async function update(boardFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${boardFormData._id}`, {
       method: 'PUT',
-      headers: { 
+      headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
@@ -71,11 +71,9 @@ async function deleteBoard(boardId) {
 
 async function addRecipeToBoard(formData) {
   try {
-    console.log('form data', formData)
-    // BASE_URL IS POST http://localhost:3001/api/boards
     const res = await fetch(`${BASE_URL}/${formData.boardId}/recipes`, {
       method: 'POST',
-      headers: { 
+      headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
