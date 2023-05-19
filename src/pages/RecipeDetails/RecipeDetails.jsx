@@ -23,6 +23,7 @@ const RecipeDetails = (props) => {
   const [formData, setFormData] = useState({
     boardId: '',
     foodId: recipeId,
+    label: '',
   })
 
   const profileId = props.user.profile
@@ -52,7 +53,7 @@ const RecipeDetails = (props) => {
   }
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    setFormData({ ...formData, [evt.target.name]: evt.target.value, label: recipe.recipe.label})
     //delete me at your leisure. but before 11:30AM
     console.log(formData)
   }

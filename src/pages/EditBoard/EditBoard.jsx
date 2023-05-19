@@ -40,10 +40,11 @@ const EditBoard = (props) => {
           value={formData.bgColor}
           onChange={handleChange}
         >
-          <option value='White'>White</option>
-          <option value='Gray'>Gray</option>
-          <option value='Cyan'>Cyan</option>
-          <option value='Magenta'>Magenta</option>
+          <option value='blue'>Cornflower Blue</option>
+          <option value='gray'>Whisper Gray</option>
+          <option value='green'>Cascade Green</option>
+          <option value='pink'>Blush Pink</option>
+          <option value='purple'>Lavender</option>
         </select>
         <button type='submit'>SUBMIT</button>
       </form>
