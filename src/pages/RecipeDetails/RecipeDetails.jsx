@@ -48,7 +48,8 @@ const RecipeDetails = (props) => {
   }, [recipeId])
 
   const handleAddToBoard = async (formData) => {
-    const recipeObj = await boardService.addRecipeToBoard(formData)
+    const recipeId = recipe.recipe.uri.split('recipe_')[1]
+    const recipeObj = await boardService.addRecipeToBoard({ ...formData, foodId: recipeId})
     return recipeObj
   }
 

@@ -71,6 +71,7 @@ async function deleteBoard(boardId) {
 
 async function addRecipeToBoard(formData) {
   try {
+    console.log(formData.boardId)
     const res = await fetch(`${BASE_URL}/${formData.boardId}/recipes`, {
       method: 'POST',
       headers: {
@@ -85,6 +86,22 @@ async function addRecipeToBoard(formData) {
   }
 }
 
+async function removeRecipeFromBoard(boardId, foodId) {
+  try {
+    console.log(boardId)
+    console.log(foodId)
+    const res = await fetch(`${BASE_URL}/${boardId}/recipes/${foodId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
@@ -92,4 +109,5 @@ export {
   update,
   deleteBoard as delete,
   addRecipeToBoard,
+  removeRecipeFromBoard,
 }

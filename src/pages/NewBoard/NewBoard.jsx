@@ -7,7 +7,7 @@ import styles from './NewBoard.module.css'
 const NewBoard = (props) => {
   const [formData, setFormData] = useState({
     title: '',
-    bgColor: 'White',
+    bgColor: 'blue',
   })
 
   const handleChange = (evt) => {
