@@ -14,7 +14,7 @@ const ProfileCard = ({ profile }) => {
       <Link to={`/profiles/${profile._id}`} >
         <main className={`${styles.profilecardcontainer}`}>
           <div className={`${styles.profileimage}`}>
-          <img style={{width: '300px'}} src={photo} alt="Profile Photo" />
+          <img style={{width: '200px', height: '200px'}} src={photo} alt="Profile Photo" />
           </div>
           <h3>{profile.name}</h3>
           <h4>{profile.boards.length} Boards</h4>
