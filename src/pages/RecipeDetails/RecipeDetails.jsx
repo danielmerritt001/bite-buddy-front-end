@@ -57,9 +57,9 @@ const RecipeDetails = (props) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value, label: recipe.recipe.label })
   }
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
-    handleAddToBoard(formData)
+    await handleAddToBoard(formData)
     navigate(`/boards/${formData.boardId}`)
   }
 
